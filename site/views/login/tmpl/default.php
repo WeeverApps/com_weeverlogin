@@ -89,24 +89,42 @@ defined('_JEXEC') or die;
 			    			xtype: 			'textfield', 
 			    			name: 			'username',
 			    			label: 			'Username',
-			    			placeHolder: 	'Your Username',
-			    			required: 		'true',
-			    			clearIcon: 		'true'
+			    			placeHolder: 	'Username',
+							cls:            'wxl-login-field',
+							id:             'wxl-login-field-username',
+			    			required: 		true,
+			    			clearIcon: 		true
 			    		
 			    		},
 			    		{
 			    		
 			    			xtype: 			'passwordfield',
 			    			name: 			'passwd',
-			    			required: 		'true',
+			    			required: 		true,
 			    			label: 			'Password',
 			    			placeHolder: 	'Password',
-			    			clearIcon: 		'true'
+							cls:            'wxl-login-field',
+							id:             'wxl-login-field-password',
+			    			clearIcon: 		true
 			    			
+			    		},
+			    		{
+			    		
+			    			xtype:			'checkboxfield',
+			    			name:			'remember',
+			    			value:			1,
+			    			label:			'Remember Me',
+			    			labelWidth:		'75%',
+							cls:            'wxl-login-checkbox',
+							id:             'wxl-login-field-rememberme',
+			    			clearIcon:		true
+			    		
 			    		},
 			    		{
 			    								
 			    			xtype:		'button',
+							cls:        'wxl-login-btn',
+							id:         'wxl-login-btn-primary',
 			    			text: 		'Sign In',
 			    			ui: 		'confirm',
 			    			handler: 	function() {

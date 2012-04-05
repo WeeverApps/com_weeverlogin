@@ -89,7 +89,9 @@ defined('_JEXEC') or die;
 			    			xtype: 			'textfield', 
 			    			name: 			'username',
 			    			label: 			'Username',
-			    			placeHolder: 	'Your Username',
+    						placeHolder: 	'Username',
+							cls:            'wxl-login-field',
+							id:             'wxl-login-field-username',
 			    			required: 		true,
 			    			clearIcon: 		true
 			    		
@@ -101,6 +103,8 @@ defined('_JEXEC') or die;
 			    			required: 		true,
 			    			label: 			'Password',
 			    			placeHolder: 	'Password',
+							cls:            'wxl-login-field',
+							id:             'wxl-login-field-password',
 			    			clearIcon: 		true
 			    			
 			    		},
@@ -111,12 +115,16 @@ defined('_JEXEC') or die;
 			    			value:			1,
 			    			label:			'Remember Me',
 			    			labelWidth:		'75%',
+							cls:            'wxl-login-checkbox',
+							id:             'wxl-login-field-rememberme',
 			    			clearIcon:		true
 			    		
 			    		},
 			    		{
 			    								
 			    			xtype:		'button',
+							cls:        'wxl-login-btn',
+							id:         'wxl-login-btn-primary',
 			    			text: 		'Sign In',
 			    			ui: 		'confirm',
 			    			handler: 	function() {

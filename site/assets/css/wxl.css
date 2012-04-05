@@ -1,3 +1,4 @@
+
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
 table{border-collapse:collapse;border-spacing:0}
 fieldset,img{border:0}
@@ -379,8 +380,7 @@ html,body{width:100%;height:100%}
 .x-carousel-indicator-dark span.x-carousel-indicator-active{background-color:rgba(0,0,0,0.3);background-image:none}
 .x-form .x-scroll-container{background-color:#eeeeee}
 .x-form .x-scroll-container>.x-inner{padding:1em}
-.x-form-label{text-shadow:#fff 0 1px 1px;color:#333333;text-shadow:rgba(255,255,255,0.25) 0 0.08em 0;padding:0.6em;display:none !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#f7f7f7}
-.x-form-label span{font-size:.8em;font-weight:bold}
+
 .x-field{min-height:2.5em;background:#fff}
 .x-field .x-field-input{position:relative}
 .x-field .x-field-input,.x-field .x-input-el{width:100%}
@@ -404,7 +404,6 @@ html,body{width:100%;height:100%}
 .x-checkmark-base,.x-field .x-input-radio:after,.x-field .x-input-checkbox:after,.x-field .x-input-radio:checked:after,.x-field .x-input-checkbox:checked:after,.x-field.x-item-disabled .x-input-radio:checked:after,.x-field.x-item-disabled .x-input-checkbox:checked:after,.x-select-overlay .x-item-selected .x-list-item-label:before,.x-select-overlay .x-item-selected .x-list-item-label:after{content:"";position:absolute;width:1.4em;height:1.4em;top:50%;left:auto;right:1.1em;-webkit-mask-size:1.4em;-webkit-mask-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAE+klEQVRoBe2aS28URxRGsY0h2FmwCQuEWLHjvUNgZAQ4PMwrEkIRIGEgySKwB8QvYIvEP+ANO0CwsJAA88wGBEKBZJUVQkJCQrwJ5nxN31Z5pnpc7e4ZT9vT0peqqanquqfurVvlIW3Dw8NTJtPTPplgxdoCnugeb3m45eEJtgJTJwJPGw8cP8V6TfmC4/Z/H9uEAAZsIdqHZiMBn2UNbvigSw8M2AIAD6PtqBPpmYe+8t1NoL9GLfYf3bTKKhiWo9PoA9KV0dUgn/tRh8tXWg/Hnj0KUB8yz1JNnjXUuhFd264A/f0O7dKXpQ7EIiTPfkKuVyvrSlx3US+KPF26cMbwxeg8Gg3W4LWHFd6rUUepQprQnI/Rh9A25AtjmqseHVkK7w59UxpgYFdg7wH0CwqFpWvyrKI23GZ7OWluwgqwOnqOobVoWh4Tm97DwCpBHUFp2TiUX3v5QVMnLQzMmqAsUVWWyta3UX/TAmOcwjjk6KmE830W7GbU0ZTAGKYEJdj3yAcQ2qYw1jmsG9e0KF8122UDw/SHwFX0EYWC+fpZGG/hPcn1sqk8jGHas+dQ6KXCB6o2g91IPfKsObZpgDGsqAT1hXdpz25A7QZqZU1gBsxFSh5zbEA9yniOU5R5PSvvCnYTSsLYtdkLTGf9uKdD/gS6gI6jPndgUXXe24OKSFAK4zsoSVA+G6uAGaC758/oBrIs+Zb6rbg9up35Xpa1jffpUqEEldezysbJ0VPLjhHADOpEfUiw2gtuUtAKDiGtYNXeqDWJ7zveYQnqM3V3nqx1s2s97xmRoLzzWqMgkLLaTVQJa0ZoJe+hXjRmaMYKVlslr2dlp5wgu4PsiTyszmg5qgVr0CqvoZW2WFlKxhV5gxJsdIMKtYH+Eew6yksoNLy0soJeFzqR+vEI9gx6h9wFzFoPSlA+25g3SlChnnUNU3grkWmxRg0n+ihBnUR5w9j2bCbPGjzzR3sgbc+6gL66TV4zkTHHEqSfZSzr+94V0mbzKUF1GkSWknG5QktGyoj7qBdVeZo2S1Ch2yUNXOMVUcEJyrcQjOeP4vzQCu9BpBtOck5T70HybN4w1iJcR7ouem9QPjhfG+On7EBPUNrKhrYLWp7+FS1FCjtdKvJ6VvM/Q9o2uWC1AHq60QB6hELh0voJ+im6iHReF+FZwe5HP/g8lrXNzuEfeeFu9C9Kg8nSrr9lBZ9ljK/v37xjL5qRFSytf3K15KXy9EH0D/JN3ui2Qj1rC5AAq4FnJvoDPUSNBnTnUy4YQF1maFHlCOAYuouJFN6PkWtEo+ryrH5sL2TPVi5UFXAMrfDegxrtae3ZfWh6paFFffYCx9BKZLtQo/a0YLXIhSUo3yKlAsfQ8vSBBkALtrCjxwdqbTWBY2glst9REee0Lw/ULUEZpFuOChxD1yuRybNbUV0SlAtq9SDgGFp7ushEJlhdKuqWoAzSLYOBHeidGPkc+cIztE2wA6iuCcoFtXom4Bha4f0nGmv2FqyOnoaFscFG9rsfQusYq0T2G8qayASrbdEdOlfR/TJ72AzAaHla5/QD9BnVCucvfK/fjZXtx8WzZneu/+WBf53XOb0G6XetHjQXyfv2vKLyH7qLLqMhJn5DOW5PLmBZDfRUilloGUoD/ovvXgIrT4/rkxt4XK0fw+TtYxhT6iEt4FK7L8D4locDFqnUXSadh78Bx5bEl2CLG+8AAAAASUVORK5CYII=');margin-top:-0.7em}
 .x-field .x-input-radio,.x-field .x-input-checkbox{position:relative}
 .x-field .x-input-radio:after,.x-field .x-input-checkbox:after{background-color:#dddddd}
-.x-field .x-input-radio:checked:after,.x-field .x-input-checkbox:checked:after{background-color:#006bb6}
 .x-field.x-item-disabled .x-input-radio:checked:after,.x-field.x-item-disabled .x-input-checkbox:checked:after{background-color:#9abad1}
 .x-spinner .x-component-outer{display:-webkit-box;display:box}
 .x-spinner .x-component-outer>*{width:auto}
@@ -536,3 +535,64 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 91.66%{-webkit-transform:rotate(330deg)}
 100%{-webkit-transform:rotate(330deg)}
 }
+
+/* Joomla! WXL Login, Specific Classes */
+
+.wxl-login-btn {
+  display: block;
+	border: 1px solid #3C8F3C;
+	color: white;
+	background-color: #5C5;
+	min-width: 10em;
+	text-align: center;
+	padding: .5em 1em;
+	margin: 1.5em auto;
+	max-width: 62%;
+	border-radius: .25em;
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 1em 0 rgba(255, 255, 255, 0.1) inset;
+	font-size: 1em;
+}
+
+.wxl-login-field {
+	border-bottom: 1px solid #DDD;
+
+
+	
+}
+
+.wxl-login-checkbox { }
+
+#wxl-login-field-password { }
+#wxl-login-field-username { }
+#wxl-login-checkbox-rememberme { }
+
+
+/* Relocated JS Generated Classes for WXL Login */
+
+.x-form-label {
+	text-shadow:#fff 0 1px 1px;
+	text-shadow:rgba(255,255,255,0.25) 0 0.08em 0;
+	display:none !important;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	background-color:#f7f7f7
+	color: #222;
+	background-color: #F7F7F7;
+	padding: 0.625em;
+	border-top: 1px solid white;
+	display: block;
+	min-width: 47%;
+	}
+	
+.x-form-label span {
+	font-size:1em;
+	font-weight:normal
+	}
+	
+	
+.x-input-el {
+	padding-left:1em;
+	}
+	
+.x-field .x-input-radio:checked:after,.x-field .x-input-checkbox:checked:after{background-color:#222}

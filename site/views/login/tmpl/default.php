@@ -90,19 +90,29 @@ defined('_JEXEC') or die;
 			    			name: 			'username',
 			    			label: 			'Username',
 			    			placeHolder: 	'Your Username',
-			    			required: 		'true',
-			    			clearIcon: 		'true'
+			    			required: 		true,
+			    			clearIcon: 		true
 			    		
 			    		},
 			    		{
 			    		
 			    			xtype: 			'passwordfield',
 			    			name: 			'passwd',
-			    			required: 		'true',
+			    			required: 		true,
 			    			label: 			'Password',
 			    			placeHolder: 	'Password',
-			    			clearIcon: 		'true'
+			    			clearIcon: 		true
 			    			
+			    		},
+			    		{
+			    		
+			    			xtype:			'checkboxfield',
+			    			name:			'remember',
+			    			value:			1,
+			    			label:			'Remember Me',
+			    			labelWidth:		'75%',
+			    			clearIcon:		true
+			    		
 			    		},
 			    		{
 			    								
@@ -125,6 +135,18 @@ defined('_JEXEC') or die;
 			    			
 			    			}
 			    			
+			    		},
+			    		{
+			    		
+			    			xtype:		'button',
+			    			text:		'Proceed as Guest',
+			    			handler:	function() {
+			    			
+			    				alert("Fowarding...");
+			    			
+			    			}
+			    		
+			    		
 			    		}
 			    		
 			    	] 	
@@ -146,5 +168,7 @@ defined('_JEXEC') or die;
 	
 </html>
 
-<?php jexit(); ?>
+<?php 
+
+jexit();
 

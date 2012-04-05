@@ -1,7 +1,7 @@
 <?php
 /*	
 *	Weever Apps Login Component for Joomla
-*	(c) 2010-2011 Weever Apps Inc. <http://www.weeverapps.com/>
+*	(c) 2012 Weever Apps Inc. <http://www.weeverapps.com/>
 *
 *	Author: 	Robert Gerald Porter <rob@weeverapps.com>
 *	Version: 	0.1
@@ -47,6 +47,47 @@ defined('_JEXEC') or die;
 			    
 			});
 			
+			var fieldsetItems = [
+			
+				{
+				
+					xtype: 			'textfield', 
+					name: 			'username',
+					label: 			'Username',
+					placeHolder: 	'Username',
+					cls:            'wxl-login-field',
+					id:             'wxl-login-field-username',
+					required: 		true,
+					clearIcon: 		true
+				
+				},
+				{
+				
+					xtype: 			'passwordfield',
+					name: 			'passwd',
+					required: 		true,
+					label: 			'Password',
+					placeHolder: 	'Password',
+					cls:            'wxl-login-field',
+					id:             'wxl-login-field-password',
+					clearIcon: 		true
+					
+				},
+				{
+				
+					xtype:			'checkboxfield',
+					name:			'remember',
+					value:			1,
+					label:			'Remember Me',
+					labelWidth:		'75%',
+					cls:            'wxl-login-checkbox',
+					id:             'wxl-login-field-rememberme',
+					clearIcon:		true
+				
+				}
+			
+			];
+			
 			Ext.define('WxLogin.view.Login', {
 			
 			    extend: 	'Ext.form.Panel',
@@ -86,38 +127,10 @@ defined('_JEXEC') or die;
 			    		},
 			    		{
 			    		
-			    			xtype: 			'textfield', 
-			    			name: 			'username',
-			    			label: 			'Username',
-    						placeHolder: 	'Username',
-							cls:            'wxl-login-field',
-							id:             'wxl-login-field-username',
-			    			required: 		true,
-			    			clearIcon: 		true
-			    		
-			    		},
-			    		{
-			    		
-			    			xtype: 			'passwordfield',
-			    			name: 			'passwd',
-			    			required: 		true,
-			    			label: 			'Password',
-			    			placeHolder: 	'Password',
-							cls:            'wxl-login-field',
-							id:             'wxl-login-field-password',
-			    			clearIcon: 		true
-			    			
-			    		},
-			    		{
-			    		
-			    			xtype:			'checkboxfield',
-			    			name:			'remember',
-			    			value:			1,
-			    			label:			'Remember Me',
-			    			labelWidth:		'75%',
-							cls:            'wxl-login-checkbox',
-							id:             'wxl-login-field-rememberme',
-			    			clearIcon:		true
+			    			xtype:		'fieldset',
+			    			id:			'wxl-login-form-container',
+			    			cls:		'wxl-login-form',
+			    			items:		fieldsetItems
 			    		
 			    		},
 			    		{

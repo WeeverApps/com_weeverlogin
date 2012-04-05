@@ -1,4 +1,3 @@
-
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
 table{border-collapse:collapse;border-spacing:0}
 fieldset,img{border:0}
@@ -566,6 +565,8 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 #wxl-login-field-username { }
 #wxl-login-checkbox-rememberme { }
 
+#wxl-login-form-container { }
+.wxl-login-form { border: 1px solid #c1c1c1 }
 
 /* Relocated JS Generated Classes for WXL Login */
 

@@ -20,6 +20,13 @@
 */
 defined('_JEXEC') or die;
 
+$settings = WeeverLoginHelper::getWeeverSettingsDB();
+
+$appdress = "http://" . WeeverLoginHelper::getCustomAppDomain($settings);
+
+if( $appdress == "http://" )
+	$appdress = 'http://weeverapp.com/app/'.WeeverLoginHelper::getPrimaryDomain($settings);
+
 ?><!DOCTYPE html>
 <html>
 
@@ -34,151 +41,222 @@ defined('_JEXEC') or die;
 		
 		<script type="text/javascript">
 		
+			var wxl = wxl || {};
+			
+			wxl.appdress 	= '<?php echo JRequest::getVar('appUrl', $appdress); ?>';
+			
+			<?php if( strstr( JRequest::getVar("appUrl"), "guest=1" ) ) : ?> 
+				wxl.guestParam	= '';
+			<?php else: ?>
+				wxl.guestParam 	= '?guest=1';
+			<?php endif; ?>
+			
+			// ST2 override
+			// necessary because J1.5 onLoginFailure is broken
+			// so we're going to assume all bad responses are login failures.
+			
+			Ext.decode = function() {
+		
+				isNative = function() {
+				
+					var useNative = null;
+			
+					return function() {
+					
+						if (useNative === null) {
+							useNative = Ext.USE_NATIVE_JSON && window.JSON && JSON.toString() == '[object JSON]';
+						}
+			
+						return useNative;
+						
+					};
+					
+				}(),
+				doDecode = function(json) {
+				
+					return eval("(" + json + ')');
+						
+				};
+		
+				var dc;
+				
+				return function(json, safe) {
+					if (!dc) {
+					
+						// setup decoding function on first access
+						dc = isNative() ? JSON.parse : doDecode;
+						
+					}
+					try {
+					
+						return dc(json);
+						
+					} catch (e) {
+					
+						if (safe === true) {
+							return null;
+						}
+						
+						Ext.Msg.alert( "Your login or password was invalid.", Ext.emptyFn() );
+					}
+					
+				};
+			
+			}();
+		
 			Ext.application({
 			
-			    name: 			'WxLogin',
-			    icon: 			'resources/images/logo.png',
-			    views: 			['Login'],
-			    launch: 		function() {
-			    
-			        Ext.create('WxLogin.view.Login');
-			        
-			    }
-			    
-			});
-			
-			var fieldsetItems = [
-			
-				{
+				name: 			'WxLogin',
+				icon: 			'resources/images/logo.png',
+				views: 			['Login'],
+				launch: 		function() {
 				
-					xtype: 			'textfield', 
-					name: 			'username',
-					label: 			'Username',
-					placeHolder: 	'Username',
-					cls:            'wxl-login-field',
-					id:             'wxl-login-field-username',
-					required: 		true,
-					clearIcon: 		true
-				
-				},
-				{
-				
-					xtype: 			'passwordfield',
-					name: 			'passwd',
-					required: 		true,
-					label: 			'Password',
-					placeHolder: 	'Password',
-					cls:            'wxl-login-field',
-					id:             'wxl-login-field-password',
-					clearIcon: 		true
+					Ext.create('WxLogin.view.Login');
 					
-				},
-				{
-				
-					xtype:			'checkboxfield',
-					name:			'remember',
-					value:			1,
-					label:			'Remember Me',
-					labelWidth:		'75%',
-					cls:            'wxl-login-checkbox',
-					id:             'wxl-login-field-rememberme',
-					clearIcon:		true
-				
 				}
-			
-			];
+				
+			});
 			
 			Ext.define('WxLogin.view.Login', {
 			
-			    extend: 	'Ext.form.Panel',
-			    config: 	{
-			    
-			    	fullscreen:		true,
-			    	xtype:			'formpanel',
-			    	items: 			[
-			    		
-			    		{
-			    			
-			    			xtype: 		'hiddenfield',
-			    			name: 		'option',
-			    			value: 		'com_user'
-			    		
-			    		},
-			    		{
-			    		
-			    			xtype: 		'hiddenfield',
-			    			name: 		'task',
-			    			value: 		'login'
-			    			
-			    		},
-			    		{
-			    		
-			    			xtype:		'hiddenfield',
-			    			name:		'jCorsRequest',
-			    			value:		1
-			    		
-			    		},
-			    		{
-			    		
-			    			xtype:		'hiddenfield',
-			    			name:		'<?php echo JUtility::getToken(); ?>',
-			    			value:		1
-			    		
-			    		},
-			    		{
-			    		
-			    			xtype:		'fieldset',
-			    			id:			'wxl-login-form-container',
-			    			cls:		'wxl-login-form',
-			    			items:		fieldsetItems
-			    		
-			    		},
-			    		{
-			    								
-			    			xtype:		'button',
+				extend: 	'Ext.form.Panel',
+				config: 	{
+				
+					fullscreen:		true,
+					xtype:			'formpanel',
+					exception: function (panel, result, options) {
+					
+						alert("Failed");
+					
+					},
+					items: 			[
+						
+						{
+							
+							xtype: 		'hiddenfield',
+							name: 		'option',
+							value: 		'com_user'
+						
+						},
+						{
+						
+							xtype: 		'hiddenfield',
+							name: 		'task',
+							value: 		'login'
+							
+						},
+						{
+						
+							xtype:		'hiddenfield',
+							name:		'jCorsRequest',
+							value:		1
+						
+						},
+						{
+						
+							xtype:		'hiddenfield',
+							name:		'<?php echo JUtility::getToken(); ?>',
+							value:		1
+						
+						},
+						{
+						
+							xtype:		'fieldset',
+							id:			'wxl-login-form-container',
+							cls:		'wxl-login-form',
+							items:		[
+							
+								{
+								
+									xtype: 			'textfield', 
+									name: 			'username',
+									label: 			'Username',
+									placeHolder: 	'Username',
+									cls:            'wxl-login-field',
+									id:             'wxl-login-field-username',
+									required: 		true,
+									clearIcon: 		true
+								
+								},
+								{
+								
+									xtype: 			'passwordfield',
+									name: 			'passwd',
+									required: 		true,
+									label: 			'Password',
+									placeHolder: 	'Password',
+									cls:            'wxl-login-field',
+									id:             'wxl-login-field-password',
+									clearIcon: 		true
+									
+								},
+								{
+								
+									xtype:			'checkboxfield',
+									name:			'remember',
+									value:			1,
+									label:			'Remember Me',
+									labelWidth:		'75%',
+									cls:            'wxl-login-checkbox',
+									id:             'wxl-login-field-rememberme',
+									clearIcon:		true
+								
+								}
+							
+							]
+						
+						},
+						{
+												
+							xtype:		'button',
 							cls:        'wxl-login-btn',
 							id:         'wxl-login-btn-primary',
-			    			text: 		'Sign In',
-			    			ui: 		'confirm',
-			    			handler: 	function() {
-			    			
-			    				this.up('formpanel').submit({
-			    			
-				    				url:		'index.php',
-				    				method:		'POST',
-				    				success:	function() {
-				    				
-				    					alert('POSTED! Forwarding....');
-				    				
-				    				}
-				    				
-				    			});
-			    			
-			    			}
-			    			
-			    		},
-			    		{
-			    		
-			    			xtype:		'button',
-			    			text:		'Proceed as Guest',
-			    			handler:	function() {
-			    			
-			    				alert("Fowarding...");
-			    			
-			    			}
-			    		
-			    		
-			    		}
-			    		
-			    	] 	
-			        
-			    },
-			    initialize: function() {
-			    
-			        this.callParent(arguments);
-			        
-			    }
-			
+							text: 		'Sign In',
+							ui: 		'confirm',
+							handler: 	function() {
+							
+								this.up('formpanel').submit({
+							
+									url:		'index.php',
+									method:		'POST',
+									success:	function() {
+									
+										window.location = wxl.appdress;
+									
+									},
+									failure:	function() {
+									
+										alert("Failed");
+									
+									}				    				
+									
+								});
+							
+							}
+							
+						},
+						{
+						
+							xtype:		'button',
+							text:		'Proceed as Guest',
+							handler:	function() {
+							
+								window.location = wxl.appdress + wxl.guestParam;
+							
+							}
+						
+						
+						}
+						
+					] 	
+					
+				},
+				initialize: function() {
+				
+					this.callParent(arguments);
+					
+				}
+
 			});
 			
 		</script>

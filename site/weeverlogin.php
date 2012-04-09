@@ -22,6 +22,8 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.controller');
 
+require_once (JPATH_COMPONENT.DS.'helpers'.DS.'helper'.'.php');
+
 class WeeverLoginController extends JController
 {
 
@@ -34,8 +36,15 @@ class WeeverLoginController extends JController
 		
 		if($userid)
 		{
+			
+			$settings = WeeverLoginHelper::getWeeverSettingsDB();
 		
-			echo "Already logged in";
+			if( $appdress != WeeverLoginHelper::getCustomAppDomain($settings) )
+				$appdress = 'http://weeverapp.com/app/'.WeeverLoginHelper::getPrimaryDomain($settings);
+				
+			header('Location: ' . $appdress);
+			
+			jexit();
 		
 		}
 		

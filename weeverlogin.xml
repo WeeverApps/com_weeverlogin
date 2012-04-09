@@ -30,6 +30,7 @@
 		  <filename>weeverlogin.php</filename>
 		  <filename>index.html</filename>
 		  <folder>assets</folder>
+		  <folder>helpers</folder>
 		  <folder>views</folder>
 		  
 	  </files>

@@ -149,7 +149,15 @@ audio{width:100%}
 .x-hasbadge .x-badge{-webkit-background-clip:padding;background-clip:padding-box;-webkit-border-radius:0.2em;border-radius:0.2em;padding:.1em .3em;z-index:2;text-shadow:rgba(0,0,0,0.5) 0 -0.08em 0;-webkit-box-shadow:rgba(0,0,0,0.5) 0 0.1em 0.1em;box-shadow:rgba(0,0,0,0.5) 0 0.1em 0.1em;overflow:hidden;color:#ffcccc;border:1px solid #990000;position:absolute;width:auto;min-width:2em;line-height:1.2em;font-size:.6em;right:0px;top:-0.2em;max-width:95%;background-color:#cc0000;background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#ff6666),color-stop(2%,#f00000),color-stop(100%,#a80000));background-image:-webkit-linear-gradient(#ff6666,#f00000 2%,#a80000);background-image:linear-gradient(#ff6666,#f00000 2%,#a80000);display:inline-block}
 .x-button.x-button-action,.x-toolbar .x-button.x-button-action,.x-button.x-button-action-round,.x-toolbar .x-button.x-button-action-round,.x-button.x-button-action-small,.x-toolbar .x-button.x-button-action-small{border:1px solid #002f50;border-top-color:#003e6a;color:white}
 .x-button.x-button-action.x-button-back:before,.x-button.x-button-action.x-button-forward:before,.x-toolbar .x-button.x-button-action.x-button-back:before,.x-toolbar .x-button.x-button-action.x-button-forward:before,.x-button.x-button-action-round.x-button-back:before,.x-button.x-button-action-round.x-button-forward:before,.x-toolbar .x-button.x-button-action-round.x-button-back:before,.x-toolbar .x-button.x-button-action-round.x-button-forward:before,.x-button.x-button-action-small.x-button-back:before,.x-button.x-button-action-small.x-button-forward:before,.x-toolbar .x-button.x-button-action-small.x-button-back:before,.x-toolbar .x-button.x-button-action-small.x-button-forward:before{background:#002f50}
-.x-button.x-button-action,.x-button.x-button-action.x-button-back:after,.x-button.x-button-action.x-button-forward:after,.x-toolbar .x-button.x-button-action,.x-toolbar .x-button.x-button-action.x-button-back:after,.x-toolbar .x-button.x-button-action.x-button-forward:after,.x-button.x-button-action-round,.x-button.x-button-action-round.x-button-back:after,.x-button.x-button-action-round.x-button-forward:after,.x-toolbar .x-button.x-button-action-round,.x-toolbar .x-button.x-button-action-round.x-button-back:after,.x-toolbar .x-button.x-button-action-round.x-button-forward:after,.x-button.x-button-action-small,.x-button.x-button-action-small.x-button-back:after,.x-button.x-button-action-small.x-button-forward:after,.x-toolbar .x-button.x-button-action-small,.x-toolbar .x-button.x-button-action-small.x-button-back:after,.x-toolbar .x-button.x-button-action-small.x-button-forward:after{background-color:#006bb6;background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#50b7ff),color-stop(2%,#0080da),color-stop(100%,#005692));background-image:-webkit-linear-gradient(#50b7ff,#0080da 2%,#005692);background-image:linear-gradient(#50b7ff,#0080da 2%,#005692)}
+.x-button.x-button-action,.x-button.x-button-action.x-button-back:after,.x-button.x-button-action.x-button-forward:after,.x-toolbar .x-button.x-button-action,.x-toolbar .x-button.x-button-action.x-button-back:after,.x-toolbar .x-button.x-button-action.x-button-forward:after,.x-button.x-button-action-round,.x-button.x-button-action-round.x-button-back:after,.x-button.x-button-action-round.x-button-forward:after,.x-toolbar .x-button.x-button-action-round,.x-toolbar .x-button.x-button-action-round.x-button-back:after,.x-toolbar .x-button.x-button-action-round.x-button-forward:after,.x-button.x-button-action-small,.x-button.x-button-action-small.x-button-back:after,.x-button.x-button-action-small.x-button-forward:after,.x-toolbar .x-button.x-button-action-small,.x-toolbar .x-button.x-button-action-small.x-button-back:after,.x-toolbar .x-button.x-button-action-small.x-button-forward:after{
+
+background-color: #6C9804;
+background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#C2FA3B),color-stop(2%,#85BB05),color-stop(100%,#547503));
+background-image: -webkit-linear-gradient(#C2FA3B,#85BB05 2%,#547503);
+background-image: linear-gradient(#C2FA3B,#85BB05 2%,#547503);
+}
+
+
 .x-button.x-button-action .x-button-icon.x-icon-mask,.x-toolbar .x-button.x-button-action .x-button-icon.x-icon-mask,.x-button.x-button-action-round .x-button-icon.x-icon-mask,.x-toolbar .x-button.x-button-action-round .x-button-icon.x-icon-mask,.x-button.x-button-action-small .x-button-icon.x-icon-mask,.x-toolbar .x-button.x-button-action-small .x-button-icon.x-icon-mask{background-color:white;background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#ffffff),color-stop(2%,#ffffff),color-stop(100%,#dbf0ff));background-image:-webkit-linear-gradient(#ffffff,#ffffff 2%,#dbf0ff);background-image:linear-gradient(#ffffff,#ffffff 2%,#dbf0ff)}
 .x-button.x-button-action.x-button-pressing,.x-button.x-button-action.x-button-pressing:after,.x-button.x-button-action.x-button-pressed,.x-button.x-button-action.x-button-pressed:after,.x-button.x-button-action.x-button-active,.x-button.x-button-action.x-button-active:after,.x-toolbar .x-button.x-button-action.x-button-pressing,.x-toolbar .x-button.x-button-action.x-button-pressing:after,.x-toolbar .x-button.x-button-action.x-button-pressed,.x-toolbar .x-button.x-button-action.x-button-pressed:after,.x-toolbar .x-button.x-button-action.x-button-active,.x-toolbar .x-button.x-button-action.x-button-active:after,.x-button.x-button-action-round.x-button-pressing,.x-button.x-button-action-round.x-button-pressing:after,.x-button.x-button-action-round.x-button-pressed,.x-button.x-button-action-round.x-button-pressed:after,.x-button.x-button-action-round.x-button-active,.x-button.x-button-action-round.x-button-active:after,.x-toolbar .x-button.x-button-action-round.x-button-pressing,.x-toolbar .x-button.x-button-action-round.x-button-pressing:after,.x-toolbar .x-button.x-button-action-round.x-button-pressed,.x-toolbar .x-button.x-button-action-round.x-button-pressed:after,.x-toolbar .x-button.x-button-action-round.x-button-active,.x-toolbar .x-button.x-button-action-round.x-button-active:after,.x-button.x-button-action-small.x-button-pressing,.x-button.x-button-action-small.x-button-pressing:after,.x-button.x-button-action-small.x-button-pressed,.x-button.x-button-action-small.x-button-pressed:after,.x-button.x-button-action-small.x-button-active,.x-button.x-button-action-small.x-button-active:after,.x-toolbar .x-button.x-button-action-small.x-button-pressing,.x-toolbar .x-button.x-button-action-small.x-button-pressing:after,.x-toolbar .x-button.x-button-action-small.x-button-pressed,.x-toolbar .x-button.x-button-action-small.x-button-pressed:after,.x-toolbar .x-button.x-button-action-small.x-button-active,.x-toolbar .x-button.x-button-action-small.x-button-active:after{background-color:#0062a7;background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,#004474),color-stop(10%,#00538d),color-stop(65%,#0062a7),color-stop(100%,#0064a9));background-image:-webkit-linear-gradient(#004474,#00538d 10%,#0062a7 65%,#0064a9);background-image:linear-gradient(#004474,#00538d 10%,#0062a7 65%,#0064a9)}
 .x-button.x-button-confirm,.x-toolbar .x-button.x-button-confirm,.x-button.x-button-confirm-round,.x-toolbar .x-button.x-button-confirm-round,.x-button.x-button-confirm-small,.x-toolbar .x-button.x-button-confirm-small{border:1px solid #263501;border-top-color:#374e02;color:white}
@@ -483,8 +491,7 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 .x-msgbox .x-field-input{padding-right:2.2em}
 .x-msgbox-text{text-align:center;padding:6px 0;line-height:1.4em}
 .x-msgbox-buttons{padding:0.4em 0;height:auto}
-.x-msgbox-buttons .x-button{min-width:4.5em}
-.x-msgbox-buttons .x-button-normal span{opacity:.7}
+
 .x-msgbox-dark .x-msgbox-text{color:rgba(190,224,247,0.9);text-shadow:rgba(0,0,0,0.5) 0 -0.08em 0}
 .x-msgbox-dark .x-msgbox-input{background-color:rgba(190,224,247,0.9);background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,rgba(144,202,242,0.9)),color-stop(10%,rgba(167,213,244,0.9)),color-stop(65%,rgba(190,224,247,0.9)),color-stop(100%,rgba(192,225,247,0.9)));background-image:-webkit-linear-gradient(rgba(144,202,242,0.9),rgba(167,213,244,0.9) 10%,rgba(190,224,247,0.9) 65%,rgba(192,225,247,0.9));background-image:linear-gradient(rgba(144,202,242,0.9),rgba(167,213,244,0.9) 10%,rgba(190,224,247,0.9) 65%,rgba(192,225,247,0.9));border:0.1em solid rgba(25,133,208,0.9)}
 .x-loading-spinner{font-size:250%;height:1em;width:1em;position:relative;-webkit-transform-origin:0.5em 0.5em}
@@ -552,6 +559,18 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 	font-size: 1em;
 }
 
+#wxl-login-btn-primary { }
+
+
+#wxl-login-btn-guest {
+border: 1px solid #C1C1C1;
+background-color: #D1D1D1;
+background-image: -webkit-linear-gradient(white,#DEDEDE 2%,#BABABA);
+background-image: linear-gradient(white,#DEDEDE 2%,#BABABA);
+
+}
+
+
 .wxl-login-field {
 	border-bottom: 1px solid #DDD;
 
@@ -597,3 +616,16 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 	}
 	
 .x-field .x-input-radio:checked:after,.x-field .x-input-checkbox:checked:after{background-color:#222}
+
+
+/* Message Box Revisions */
+
+.x-msgbox { 
+    border: .125em solid #000;
+    min-width:20em;
+
+
+ }
+
+.x-msgbox
+

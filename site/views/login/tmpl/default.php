@@ -239,8 +239,8 @@ if( $appdress == "http://" )
 						
 							xtype:		'button',
 							text:		'Proceed as Guest',
-                                                        cls:            'wxl-login-btn',
-                                                        id:             'wxl-login-btn-guest',
+                            cls:        'wxl-login-btn',
+                            id:         'wxl-login-btn-guest',
 							handler:	function() {
 							
 								window.location = wxl.appdress + wxl.guestParam;

@@ -31,6 +31,8 @@ class WeeverLoginController extends JController
 	public function display()
 	{
 	
+		$appdress 	= "";
+	
 		$view 		= JRequest::getVar('view');
 		$userid 	= &JFactory::getUser()->get('id');
 		

@@ -1,7 +1,7 @@
 <?php
 /*	
 *	Weever Apps Login Component for Joomla
-*	(c) 2010-2011 Weever Apps Inc. <http://www.weeverapps.com/>
+*	(c) 2012 Weever Apps Inc. <http://www.weeverapps.com/>
 *
 *	Author: 	Robert Gerald Porter <rob@weeverapps.com>
 *	Version: 	0.1

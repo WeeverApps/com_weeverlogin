@@ -38,6 +38,7 @@ class WeeverLoginHelper {
 	
 	}
 	
+	
 	static function getPrimaryDomain($result)
 	{
 	
@@ -50,6 +51,7 @@ class WeeverLoginHelper {
 		return null;
 	
 	}
+	
 	
 	static function getDevices($result)
 	{
@@ -64,6 +66,7 @@ class WeeverLoginHelper {
 	
 	}
 	
+	
 	static function getAppEnabled($result)
 	{
 	
@@ -75,6 +78,7 @@ class WeeverLoginHelper {
 	
 		return null;
 	}
+	
 	
 	static function getCustomAppDomain($result)
 	{

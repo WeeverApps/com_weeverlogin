@@ -30,7 +30,7 @@ final class WeeverLoginConst
 
 	const VERSION			= "0.2";
 	const RELEASE_TYPE		= "beta";
-	const RELEASE_NAME		= "A-something";
+	const RELEASE_NAME		= "<a href='http://en.wikipedia.org/wiki/Antonin_Artaud' target='_blank'>Artaud</a>";
 	const NAME				= "Weever Apps Login Component for Joomla!";
 	const COPYRIGHT_YEAR	= "(c) 2010-2012";
 	const COPYRIGHT			= "Weever Apps Inc.";

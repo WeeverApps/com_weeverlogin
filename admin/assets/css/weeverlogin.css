@@ -710,7 +710,7 @@ label.wx-check-label {
 
 div#toptabs { clear: right; }
 
-.icon-48-weever_toolbar_title   { background-image: url(../icons/icon-48-weever_toolbar_title.png); }
+.icon-48-weever_toolbar_title   { background-image: url(../icons/icon-48-weever_toolbar_title.png); padding-left: 15em !important; }
 .icon-48-weever_toolbar_title_staging   { background-image: url(../icons/icon-48-weever_toolbar_title_staging.png); }
 #content-box .header, #content-box .pagetitle { 
 margin:4em 0 2.25em 2em;

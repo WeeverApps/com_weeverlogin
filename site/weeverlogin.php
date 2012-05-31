@@ -40,11 +40,11 @@ class WeeverLoginController extends JController
 		
 		if($userid)
 		{
-			
-			$settings = WeeverLoginHelper::getWeeverSettingsDB();
 		
-			if( $appdress != WeeverLoginHelper::getCustomAppDomain($settings) )
-				$appdress = 'http://weeverapp.com/app/'.WeeverLoginHelper::getPrimaryDomain($settings);
+			if( !WeeverLoginHelper::getCustomAppDomain() )
+				$appdress 	= 'http://weeverapp.com/app/'.WeeverLoginHelper::getPrimaryDomain();
+			else 
+				$appdress	= 'http://' . WeeverLoginHelper::getCustomAppDomain();
 				
 			header('Location: ' . $appdress);
 			

@@ -27,20 +27,15 @@ if(WeeverLoginHelper::joomlaVersion() != '1.5')  // ### non-1.5 only
 else 
 	$jsJoomla = "";
 	
+JHTML::_('behavior.modal', 'a.popup');
 JHTML::_('behavior.mootools');
 JHTML::_('behavior.tooltip');
+
 jimport('joomla.html.pane');
 
-$pane 	= &JPane::getInstance('config');
+$pane 	= &JPane::getInstance('tabs');
 
 ?>
-
-<div class="wx-submitcontainer">
-
-	<a href="#" onclick="javascript:<?php echo $jsJoomla; ?>submitbutton('apply')"><button class="wxui-btn orange medium radius3">&#x2713; &nbsp;<?php echo JText::_('WEEVER_SAVE_BUTTON'); ?></button></a>
-	
-</div>   
-
 
 <form action='index.php' enctype='multipart/form-data' method='post' name='adminForm' id='adminForm'>
 
@@ -48,6 +43,11 @@ $pane 	= &JPane::getInstance('config');
 <?php echo $pane->startPane('config'); ?>
 <?php echo $pane->startPanel(JText::_("WEEVERLOGIN_BASIC_SETTINGS"), 'basic-settings'); ?>
 
+	<div class="wx-submitcontainer">
+	
+		<a href="#" onclick="javascript:<?php echo $jsJoomla; ?>submitbutton('apply')"><button class="wxui-btn orange medium radius3">&#x2713; &nbsp;<?php echo JText::_('WEEVERLOGIN_SAVE_BUTTON'); ?></button></a>
+		
+	</div>   
 
 	<fieldset class='adminForm'>
 	
@@ -66,7 +66,7 @@ $pane 	= &JPane::getInstance('config');
 					<select name="EnableLogin">
 					
 						<option value="0"><?php echo JText::_('NO'); ?></option>
-						<option value="1" <?php echo $this->DetectTierWeeverSmartphones; ?>><?php echo JText::_('YES'); ?></option>
+						<option value="1" <?php echo ($this->login->enabled != 0) ? "selected='selected'" : ""; ?>><?php echo JText::_('YES'); ?></option>
 						
 					</select>
 				
@@ -130,6 +130,12 @@ $pane 	= &JPane::getInstance('config');
 
 <?php echo $pane->endPanel(); ?>
 <?php echo $pane->startPanel(JText::_("WEEVERLOGIN_ADVANCED_CSS_OVERRIDES"), 'advanced-css-overrides'); ?>
+
+	<div class="wx-submitcontainer">
+	
+		<a href="#" onclick="javascript:<?php echo $jsJoomla; ?>submitbutton('apply')"><button class="wxui-btn orange medium radius3">&#x2713; &nbsp;<?php echo JText::_('WEEVERLOGIN_SAVE_BUTTON'); ?></button></a>
+		
+	</div> 
 
 
 	<fieldset class='adminForm'>

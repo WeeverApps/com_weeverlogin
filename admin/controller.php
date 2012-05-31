@@ -54,18 +54,18 @@ class WeeverLoginController extends JController
 		{
 		
 			if( !$guest )
-				$login_setting 	= 1;
+				$login_setting 	= 2;
 				
 			else 
-				$login_setting 	= 2;		
+				$login_setting 	= 1;		
 		
 		}
 		
-		WeeverLogin::setLoginCssUrl( $css_url );
+		WeeverLoginHelper::setLoginCssUrl( $css_url );
 		
 		$query 		= array(
 		
-			'system' 			=> $publish,
+			'system' 			=> $system,
 			'enabled'			=> $login_setting,
 			'm' 				=> 'edit_login'
 					

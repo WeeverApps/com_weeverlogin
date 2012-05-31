@@ -25,9 +25,15 @@ jimport('joomla.application.component.controller');
 JTable::addIncludePath(JPATH_COMPONENT.DS.'tables');
 
 require_once (JPATH_COMPONENT.DS.'helpers'.DS.'helper'.'.php');
+require_once (JPATH_COMPONENT.DS.'helpers'.DS.'config'.'.php');
 require_once (JPATH_COMPONENT.DS.'controller.php');
 
-JToolBarHelper::title( '&nbsp;', 'weever_toolbar_title');
+JToolBarHelper::title( 'Login Settings', 'weever_toolbar_title');
+
+$cssFile 	= JURI::base(true).'/components/com_weeverlogin/assets/css/weeverlogin.css?v='.WeeverLoginConst::VERSION;
+
+$document 	=& JFactory::getDocument();
+$document->addStyleSheet($cssFile, 'text/css', null, array());
 
 $controller = new WeeverLoginController();
 

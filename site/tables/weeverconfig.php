@@ -21,7 +21,7 @@
 
 defined('_JEXEC') or die;
 
-class TableWeeverLoginConfig extends JTable
+class TableWeeverConfig extends JTable
 {
 
 	public $id 						= 0;

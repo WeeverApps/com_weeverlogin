@@ -20,6 +20,8 @@
 */
 defined('_JEXEC') or die;
 
+jimport('joomla.application.component.helper');
+jimport('joomla.plugin.helper');
 
 class WeeverLoginHelper {
 

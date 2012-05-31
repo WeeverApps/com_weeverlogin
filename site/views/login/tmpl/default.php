@@ -20,13 +20,12 @@
 */
 defined('_JEXEC') or die;
 
-$settings 	= WeeverLoginHelper::getWeeverSettingsDB();
-$guest 		= WeeverLoginHelper::getLoginSetting($settings);
-
-$appdress = "http://" . WeeverLoginHelper::getCustomAppDomain($settings);
+$guest 		= WeeverLoginHelper::getLoginSetting();
+$appdress 	= "http://" . WeeverLoginHelper::getCustomAppDomain();
+$css_url	= WeeverLoginHelper::getLoginCssUrl();
 
 if( $appdress == "http://" )
-	$appdress = 'http://weeverapp.com/app/'.WeeverLoginHelper::getPrimaryDomain($settings);
+	$appdress = 'http://weeverapp.com/app/'.WeeverLoginHelper::getPrimaryDomain();
 
 ?><!DOCTYPE html>
 <html>
@@ -36,6 +35,12 @@ if( $appdress == "http://" )
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 
 		<link rel='stylesheet' href='<?php echo JURI::base(true)."/components/com_weeverlogin/assets/css/wxl.css"; ?>' type='text/css' />
+		
+	<?php if( $css_url ) : ?>
+	
+		<link rel='stylesheet' href='<?php echo $css_url; ?>' type='text/css' />
+		
+	<?php endif; ?>
 		
 		<script type='text/javascript' src='<?php echo JURI::base(true)."/components/com_weeverlogin/assets/js/touch.js"; ?>'></script>
 		<script type='text/javascript' src='<?php echo JURI::base(true)."/components/com_weeverlogin/assets/js/app-all.js"; ?>'></script>

@@ -24,7 +24,7 @@ defined('_JEXEC') or die;
 echo '<div style="text-align:center;clear:both; margin-top:24px;">'.WeeverLoginConst::NAME.' v'.WeeverLoginConst::VERSION.' "'.WeeverLoginConst::RELEASE_NAME.'" ('.WeeverLoginConst::RELEASE_TYPE. ')<br />'.
 	WeeverLoginConst::COPYRIGHT_YEAR.' <a target="_blank" href="'.WeeverLoginConst::COPYRIGHT_URL.'">'.WeeverLoginConst::COPYRIGHT.'</a> 
 	Released '.WeeverLoginConst::RELEASE_DATE.' under <a target="_blank" href="'.WeeverLoginConst::LICENSE_URL.'">'.WeeverLoginConst::LICENSE.'</a>. 
-	<a target="_blank" href="http://support.weeverapps.com">'.JText::_('WEEVER_VISIT_SUPPORT_SITE').'</a></div>';
+	<a target="_blank" href="http://support.weeverapps.com">'.JText::_('WEEVERLOGIN_VISIT_SUPPORT_SITE').'</a></div>';
 	
 	
 	

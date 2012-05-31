@@ -30,7 +30,7 @@ $lang->load("com_weever");
 /* Detect plg_weever_cors */
 
 $db 	= & JFactory::getDBO();
-$query 	= "SELECT `id` FROM `#__plugins` WHERE element=".$db->Quote('weever_cors')." AND folder=".$db->Quote('system');
+$query 	= "SELECT `id` FROM `#__plugins` WHERE element=".$db->Quote('weevercors')." AND folder=".$db->Quote('system');
 
 $db->setQuery($query);
 $check 	= $db->loadResultArray();
@@ -54,7 +54,7 @@ else
 
 $installer 			= new JInstaller;
 $src 				= $this->parent->getPath('source');
-$path 				= $src.DS.'plugins'.DS.'system'.DS.'weever_cors';
+$path 				= $src.DS.'plugins'.DS.'system'.DS.'weevercors';
 $result 			= $installer->install($path);
 
 if($result)
@@ -62,9 +62,9 @@ if($result)
 else
 	$message 	= "<span style='color:red'>" . JText::_("WEEVER_FAILED") . "</span>";
 	
-echo "<p>" . $pluginInstallText . "system/weever_cors: <b>" . $message . "</b></p>";
+echo "<p>" . $pluginInstallText . "system/weevercors: <b>" . $message . "</b></p>";
 
-$query 			= "UPDATE #__plugins SET published='1' WHERE element='weever_cors' AND folder='system'";
+$query 			= "UPDATE #__plugins SET published='1' WHERE element='weevercors' AND folder='system'";
 
 $db->setQuery($query);
 $db->query();
@@ -74,10 +74,10 @@ echo "<p><i>".JText::_("WEEVER_ENABLED_PLUGIN")."Weever Cross Origin Resource Sh
 
 
 
-/* Detect plg_weever_authenticate */
+/* Detect plg_weeverauthenticate */
 
 $db 	= & JFactory::getDBO();
-$query 	= "SELECT `id` FROM `#__plugins` WHERE element=".$db->Quote('weever_authenticate')." AND folder=".$db->Quote('user');
+$query 	= "SELECT `id` FROM `#__plugins` WHERE element=".$db->Quote('weeverauthenticate')." AND folder=".$db->Quote('user');
 
 $db->setQuery($query);
 $check 	= $db->loadResultArray();
@@ -97,11 +97,11 @@ else
 
 }
 
-/* Install plg_weever_cors plugin */
+/* Install plg_weevercors plugin */
 
 $installer 			= new JInstaller;
 $src 				= $this->parent->getPath('source');
-$path 				= $src.DS.'plugins'.DS.'user'.DS.'weever_authenticate';
+$path 				= $src.DS.'plugins'.DS.'user'.DS.'weeverauthenticate';
 $result 			= $installer->install($path);
 
 if($result)
@@ -109,9 +109,9 @@ if($result)
 else
 	$message 	= "<span style='color:red'>" . JText::_("WEEVER_FAILED") . "</span>";
 	
-echo "<p>" . $pluginInstallText . "user/weever_authenticate: <b>" . $message . "</b></p>";
+echo "<p>" . $pluginInstallText . "user/weeverauthenticate: <b>" . $message . "</b></p>";
 
-$query 			= "UPDATE #__plugins SET published='1' WHERE element='weever_authenticate' AND folder='user'";
+$query 			= "UPDATE #__plugins SET published='1' WHERE element='weeverauthenticate' AND folder='user'";
 
 $db->setQuery($query);
 $db->query();

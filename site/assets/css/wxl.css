@@ -582,11 +582,10 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 
 
 #wxl-login-btn-guest {
-display: none;
-border: 1px solid #C1C1C1;
-background-color: #D1D1D1;
-background-image: -webkit-linear-gradient(white,#DEDEDE 2%,#BABABA);
-background-image: linear-gradient(white,#DEDEDE 2%,#BABABA);
+border: 1px solid #616161;
+background-color: #919191;
+background-image: -webkit-linear-gradient(white,#919191 2%,#7A7A7A);
+background-image: linear-gradient(white,#9E9E9E 2%,#7A7A7A);
 
 }
 

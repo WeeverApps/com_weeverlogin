@@ -62,6 +62,7 @@ class WeeverLoginController extends JController
 		}
 		
 		WeeverLoginHelper::setLoginCssUrl( $css_url );
+		WeeverLoginHelper::setLoginSetting( $login_setting );
 		
 		$query 		= array(
 		

@@ -246,7 +246,11 @@ if( $appdress == "http://" )
 							xtype:		'button',
 							text:		'Proceed as Guest',
                             cls:        'wxl-login-btn',
-                            hidden:		true,
+                       <?php if( $guest != 1 ) : ?>
+                       		
+                       		 hidden:		true,
+                       	
+                       <?php endif; ?>
                             id:         'wxl-login-btn-guest',
 							handler:	function() {
 							
@@ -263,12 +267,6 @@ if( $appdress == "http://" )
 				initialize: function() {
 				
 					this.callParent(arguments);
-					
-				<?php if( $guest == 1 ) : ?>
-					
-					Ext.getCmp('wxl-login-btn-guest').show('fade');
-					
-				<?php endif; ?>
 					
 				}
 

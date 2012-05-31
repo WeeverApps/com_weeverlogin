@@ -87,6 +87,7 @@ class WeeverLoginHelper {
 	public static function getLoginCssUrl()		{ return self::getSetting(14); }
 	
 	public static function setLoginCssUrl($arg)			{ return self::setSetting(14, $arg); }
+	public static function setLoginSetting($arg)		{ return self::setSetting(13, $arg); }
 	
 	
 	public static function buildAjaxQuery($query)

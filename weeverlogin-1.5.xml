@@ -50,8 +50,8 @@
 	</files>
 	
 	<plugins>
-		<plugin plugin="weever_cors" group="system" />
-		<plugin plugin="weever_authenticate" group="user" />
+		<plugin plugin="weevercors" group="system" />
+		<plugin plugin="weeverauthenticate" group="user" />
 	</plugins>
 	
 	<installfile>install.1.5.php</installfile>

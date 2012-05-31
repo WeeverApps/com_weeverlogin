@@ -1,6 +1,6 @@
 <?php
 /*	
-*	Weever Apps Login Administrator Component for Joomla
+*	Weever Apps Login Component for Joomla
 *	(c) 2012 Weever Apps Inc. <http://www.weeverapps.com/>
 *
 *	Author: 	Robert Gerald Porter <rob@weeverapps.com>
@@ -18,21 +18,13 @@
 *   GNU General Public License for more details <http://www.gnu.org/licenses/>.
 *
 */
+
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.controller');
-
-JTable::addIncludePath(JPATH_COMPONENT.DS.'tables');
-
-require_once (JPATH_COMPONENT.DS.'helpers'.DS.'helper'.'.php');
-require_once (JPATH_COMPONENT.DS.'controller.php');
-
-JToolBarHelper::title( '&nbsp;', 'weever_toolbar_title');
-
-$controller = new WeeverLoginController();
-
-$controller->registerTask('apply', 'save');
-$controller->execute( JRequest::getWord('task') );
-$controller->redirect();
-
-include("views/modules/footer.php");
+echo '<div style="text-align:center;clear:both; margin-top:24px;">'.WeeverLoginConst::NAME.' v'.WeeverLoginConst::VERSION.' "'.WeeverLoginConst::RELEASE_NAME.'" ('.WeeverLoginConst::RELEASE_TYPE. ')<br />'.
+	WeeverLoginConst::COPYRIGHT_YEAR.' <a target="_blank" href="'.WeeverLoginConst::COPYRIGHT_URL.'">'.WeeverLoginConst::COPYRIGHT.'</a> 
+	Released '.WeeverLoginConst::RELEASE_DATE.' under <a target="_blank" href="'.WeeverLoginConst::LICENSE_URL.'">'.WeeverLoginConst::LICENSE.'</a>. 
+	<a target="_blank" href="http://support.weeverapps.com">'.JText::_('WEEVER_VISIT_SUPPORT_SITE').'</a></div>';
+	
+	
+	

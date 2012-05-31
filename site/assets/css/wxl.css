@@ -3,7 +3,7 @@
 *	(c) 2012 Weever Apps Inc. <http://www.weeverapps.com/>
 *
 *	Author: 	Robert Gerald Porter <rob@weeverapps.com>
-*	Version: 	0.1
+*	Version: 	0.2
 *   License: 	GPL v3.0
 *
 *   This extension is free software: you can redistribute it and/or modify
@@ -582,6 +582,7 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 
 
 #wxl-login-btn-guest {
+display: none;
 border: 1px solid #C1C1C1;
 background-color: #D1D1D1;
 background-image: -webkit-linear-gradient(white,#DEDEDE 2%,#BABABA);

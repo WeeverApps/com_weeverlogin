@@ -4,7 +4,7 @@
 *	(c) 2012 Weever Apps Inc. <http://www.weeverapps.com/>
 *
 *	Author: 	Robert Gerald Porter <rob@weeverapps.com>
-*	Version: 	0.1
+*	Version: 	0.2
 *   License: 	GPL v3.0
 *
 *   This extension is free software: you can redistribute it and/or modify
@@ -20,7 +20,8 @@
 */
 defined('_JEXEC') or die;
 
-$settings = WeeverLoginHelper::getWeeverSettingsDB();
+$settings 	= WeeverLoginHelper::getWeeverSettingsDB();
+$guest 		= WeeverLoginHelper::getLoginSetting($settings);
 
 $appdress = "http://" . WeeverLoginHelper::getCustomAppDomain($settings);
 
@@ -240,6 +241,7 @@ if( $appdress == "http://" )
 							xtype:		'button',
 							text:		'Proceed as Guest',
                             cls:        'wxl-login-btn',
+                            hidden:		true,
                             id:         'wxl-login-btn-guest',
 							handler:	function() {
 							
@@ -256,6 +258,12 @@ if( $appdress == "http://" )
 				initialize: function() {
 				
 					this.callParent(arguments);
+					
+				<?php if( $guest == 1 ) : ?>
+					
+					Ext.getCmp('wxl-login-btn-guest').show('fade');
+					
+				<?php endif; ?>
 					
 				}
 

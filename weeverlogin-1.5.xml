@@ -2,24 +2,30 @@
 <install type="component" version="1.5.0" method="upgrade">
 
 	<name>Weever Login</name>
-	<creationDate>2012-04-21</creationDate>
+	<creationDate>2012-05-31</creationDate>
 	<author>Robert Gerald Porter</author>
 	<authorEmail>rob@weeverapps.com</authorEmail>
 	<authorUrl>http://www.weeverapps.com/</authorUrl>
 	<copyright>(c) 2012 Weever Apps Inc.</copyright>
 	<license>GPLv3</license>
-	<version>0.1-PR1</version>
-	<releaseType>Preview Beta Release</releaseType>
+	<version>0.2</version>
+	<releaseType>Beta</releaseType>
 	<description>Joomla login component for Weever Apps.</description>
 	
 	<administration>
 	
-		<menu link="com_weeverlogin" img="components/com_weever/assets/icons/icon-16-weever_menu_logo.png">Weever Login (empty)</menu>
+		<menu link="com_weeverlogin" img="components/com_weever/assets/icons/icon-16-weever_menu_logo.png">Weever Login Settings</menu>
 		
 		<files folder="admin">
 		
 			<filename>weeverlogin.php</filename>
 			<filename>index.html</filename>
+			<filename>controller.php</filename>
+			<folder>assets</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
 		
 		</files>
 	

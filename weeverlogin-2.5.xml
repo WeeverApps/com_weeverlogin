@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.7" method="upgrade">
+
+	<name>COM_WEEVERLOGIN</name>
+	<creationDate>2012-05-31</creationDate>
+	<author>Robert Gerald Porter</author>
+	<authorEmail>rob@weeverapps.com</authorEmail>
+	<authorUrl>http://www.weeverapps.com/</authorUrl>
+	<copyright>(c) 2010-2012 Weever Apps Inc.</copyright>
+	<license>GPLv3</license>
+	<version>0.2</version>
+	<description>COM_WEEVERLOGIN_DESCRIPTION</description>
+	
+		<administration>
+	
+			<menu link="com_weeverlogin" img="components/com_weever/assets/icons/icon-16-weever_menu_logo.png">Weever Login (empty)</menu>
+			
+			<files folder="admin">
+				
+				<filename>weeverlogin.php</filename>
+				<filename>index.html</filename>
+				<filename>controller.php</filename>
+				<folder>assets</folder>
+				<folder>helpers</folder>
+				<folder>models</folder>
+				<folder>tables</folder>
+				<folder>views</folder>
+				
+			</files>
+		
+		</administration>
+		
+		<files folder="site">
+		
+			<filename>weeverlogin.php</filename>
+			<filename>index.html</filename>
+			<folder>assets</folder>
+			<folder>helpers</folder>
+			<folder>views</folder>
+		
+		</files>
+
+	<updateservers>
+	
+		<server type="extension" priority="2" name="Weever Apps Updates">http://weeverapps.com/download_files/com_weeverlogin.xml</server>
+		
+	</updateservers>
+	 
+</extension>

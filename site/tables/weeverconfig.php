@@ -1,6 +1,6 @@
 <?php
 /*	
-*	Weever Apps Login Administrator Component for Joomla
+*	Weever Apps Login Component for Joomla
 *	(c) 2012 Weever Apps Inc. <http://www.weeverapps.com/>
 *
 *	Author: 	Robert Gerald Porter <rob@weeverapps.com>
@@ -18,21 +18,22 @@
 *   GNU General Public License for more details <http://www.gnu.org/licenses/>.
 *
 */
+
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.controller');
+class TableWeeverLoginConfig extends JTable
+{
 
-JTable::addIncludePath(JPATH_COMPONENT.DS.'tables');
+	public $id 						= 0;
+	public $option					= null;
+	public $setting					= null;
+	
+	public function __construct(&$db)
+	{
+	
+		parent::__construct('#__weever_config', 'id', $db);
+			
+	}
 
-require_once (JPATH_COMPONENT.DS.'helpers'.DS.'helper'.'.php');
-require_once (JPATH_COMPONENT.DS.'controller.php');
 
-JToolBarHelper::title( '&nbsp;', 'weever_toolbar_title');
-
-$controller = new WeeverLoginController();
-
-$controller->registerTask('apply', 'save');
-$controller->execute( JRequest::getWord('task') );
-$controller->redirect();
-
-include("views/modules/footer.php");
+}

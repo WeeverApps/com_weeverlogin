@@ -25,8 +25,15 @@
 				<folder>models</folder>
 				<folder>tables</folder>
 				<folder>views</folder>
+				<folder>languages</folder>
 				
 			</files>
+			
+			<languages folder="admin/com_weeverlogin/languages">
+			
+				<language tag="en-GB">en-GB/en-GB.com_weeverlogin.ini</language>
+				
+			</languages>
 		
 		</administration>
 		

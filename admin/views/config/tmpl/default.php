@@ -66,7 +66,7 @@ $pane 	= &JPane::getInstance('tabs');
 					<select name="EnableLogin">
 					
 						<option value="0"><?php echo JText::_('NO'); ?></option>
-						<option value="1" <?php echo ($this->login->enabled != 0) ? "selected='selected'" : ""; ?>><?php echo JText::_('YES'); ?></option>
+						<option value="1" <?php echo (@$this->login->enabled != 0) ? "selected='selected'" : ""; ?>><?php echo JText::_('YES'); ?></option>
 						
 					</select>
 				
@@ -85,7 +85,7 @@ $pane 	= &JPane::getInstance('tabs');
 					<select name="AllowGuest">
 					
 						<option value="1"><?php echo JText::_('YES'); ?></option>
-						<option value="0" <?php echo ($this->login->enabled == 2) ? "selected='selected'" : ""; ?>><?php echo JText::_('NO'); ?></option>
+						<option value="0" <?php echo (@$this->login->enabled == 2) ? "selected='selected'" : ""; ?>><?php echo JText::_('NO'); ?></option>
 						
 					</select>
 				
@@ -115,7 +115,7 @@ $pane 	= &JPane::getInstance('tabs');
 					<select name="UserSystem">
 					
 						<option value="joomla"><?php echo JText::_('WEEVERLOGIN_PROFILE_JOOMLA_NATIVE'); ?></option>
-						<!--option value="k2" <?php echo ($this->login->system == "k2") ? "selected='selected'" : ''; ?>><?php echo JText::_('WEEVERLOGIN_PROFILE_K2'); ?></option-->
+						<!--option value="k2" <?php echo (@$this->login->system == "k2") ? "selected='selected'" : ''; ?>><?php echo JText::_('WEEVERLOGIN_PROFILE_K2'); ?></option-->
 						
 					</select>
 				

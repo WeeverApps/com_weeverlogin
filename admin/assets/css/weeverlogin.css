@@ -712,7 +712,7 @@ div#toptabs { clear: right; }
 
 .icon-48-weever_toolbar_title   { background-image: url(../icons/icon-48-weever_toolbar_title.png); padding-left: 15em !important; }
 .icon-48-weever_toolbar_title h2 {
-	padding-left: 15em !important;
+	padding-left: 8.5em !important;
 }
 .icon-48-weever_toolbar_title_staging   { background-image: url(../icons/icon-48-weever_toolbar_title_staging.png); }
 #content-box .header, #content-box .pagetitle { 

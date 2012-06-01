@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install type="component" version="1.5.0" method="upgrade">
 
-	<name>Weever Login</name>
+	<name>Weever Apps Login Component</name>
 	<creationDate>2012-06-01</creationDate>
 	<author>Robert Gerald Porter</author>
 	<authorEmail>rob@weeverapps.com</authorEmail>
@@ -14,7 +14,7 @@
 	
 	<administration>
 	
-		<menu link="com_weeverlogin" img="components/com_weever/assets/icons/icon-16-weever_menu_logo.png">Weever Login Settings</menu>
+		<menu link="com_weeverlogin" img="components/com_weever/assets/icons/icon-16-weever_menu_logo.png">Weever Mobile App Login Settings</menu>
 		
 		<files folder="admin">
 		
@@ -33,6 +33,7 @@
 		<languages folder="admin/languages">
 		
 			<language tag="en-GB">en-GB/en-GB.com_weeverlogin.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_weeverlogin.sys.ini</language>
 			
 		</languages>
 	

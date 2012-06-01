@@ -157,7 +157,6 @@ class WeeverLoginHelper {
 	public static function sendToWeeverServer($postdata)
 	{
 
-		
 		if(in_array('curl', get_loaded_extensions()))
 		{
 		

@@ -141,20 +141,20 @@ if( $appdress == "http://" )
 							
 							xtype: 		'hiddenfield',
 							name: 		'option',
-							value: 		'com_user'
+							value: 		'com_user<?php echo (WeeverLoginHelper::joomlaVersion() != "1.5") ? "s":""; ?>'
 						
 						},
 						{
 						
 							xtype: 		'hiddenfield',
 							name: 		'task',
-							value: 		'login'
+							value: 		'<?php echo (WeeverLoginHelper::joomlaVersion() != "1.5") ? "user.login":"login"; ?>'
 							
 						},
 						{
 						
 							xtype:		'hiddenfield',
-							name:		'jCorsRequest',
+							name:		'wxCorsRequest',
 							value:		1
 						
 						},
@@ -165,6 +165,17 @@ if( $appdress == "http://" )
 							value:		1
 						
 						},
+						<?php if( WeeverLoginHelper::joomlaVersion() != "1.5" ) : ?>
+						
+						{
+						
+							xtype:		'hiddenfield',
+							name:		'return',
+							value:		'aW5kZXgucGhwP29wdGlvbj1jb21fdXNlcnMmd3hDb25maXJtTG9naW49MQ=='
+						
+						},
+						
+						<?php endif; ?>
 						{
 						
 							xtype:		'fieldset',
@@ -187,7 +198,7 @@ if( $appdress == "http://" )
 								{
 								
 									xtype: 			'passwordfield',
-									name: 			'passwd',
+									name: 			'<?php echo (WeeverLoginHelper::joomlaVersion() != "1.5") ? "password":"passwd"; ?>',
 									required: 		true,
 									label: 			'Password',
 									placeHolder: 	'Password',
@@ -225,8 +236,10 @@ if( $appdress == "http://" )
 							
 									url:		'index.php',
 									method:		'POST',
-									success:	function() {
+									success:	function(form, result) {
 									
+										//console.log(form);
+										//console.log(result);
 										window.location = wxl.appdress;
 									
 									},

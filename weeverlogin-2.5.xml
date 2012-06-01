@@ -2,7 +2,7 @@
 <extension type="component" version="1.7" method="upgrade">
 
 	<name>COM_WEEVERLOGIN</name>
-	<creationDate>2012-05-31</creationDate>
+	<creationDate>2012-06-01</creationDate>
 	<author>Robert Gerald Porter</author>
 	<authorEmail>rob@weeverapps.com</authorEmail>
 	<authorUrl>http://www.weeverapps.com/</authorUrl>
@@ -11,9 +11,11 @@
 	<version>0.2</version>
 	<description>COM_WEEVERLOGIN_DESCRIPTION</description>
 	
+	<scriptfile>install.2.5.php</scriptfile>
+	
 		<administration>
 	
-			<menu link="com_weeverlogin" img="components/com_weever/assets/icons/icon-16-weever_menu_logo.png">Weever Login (empty)</menu>
+			<menu link="com_weeverlogin" img="components/com_weever/assets/icons/icon-16-weever_menu_logo.png">Weever Login</menu>
 			
 			<files folder="admin">
 				
@@ -29,7 +31,7 @@
 				
 			</files>
 			
-			<languages folder="admin/com_weeverlogin/languages">
+			<languages folder="admin/languages">
 			
 				<language tag="en-GB">en-GB/en-GB.com_weeverlogin.ini</language>
 				
@@ -53,5 +55,13 @@
 		<server type="extension" priority="2" name="Weever Apps Updates">http://weeverapps.com/download_files/com_weeverlogin.xml</server>
 		
 	</updateservers>
+	
+	<plugins>
+	
+		<plugin folder="plugins/system" plugin="weevercors" group="system" name="System - Weever Apps Cross-Origin Resource Sharing (CORS) Connector" />
+		<plugin folder="plugins/user" plugin="weeverauthenticate" name="User - Weever Apps AJAX Authenticator" />
+		
+	</plugins>
+	
 	 
 </extension>

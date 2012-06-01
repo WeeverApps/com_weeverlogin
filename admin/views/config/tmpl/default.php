@@ -115,7 +115,7 @@ $pane 	= &JPane::getInstance('tabs');
 					<select name="UserSystem">
 					
 						<option value="joomla"><?php echo JText::_('WEEVERLOGIN_PROFILE_JOOMLA_NATIVE'); ?></option>
-						<option value="k2" <?php echo ($this->login->system == "k2") ? "selected='selected'" : ''; ?>><?php echo JText::_('WEEVERLOGIN_PROFILE_K2'); ?></option>
+						<!--option value="k2" <?php echo ($this->login->system == "k2") ? "selected='selected'" : ''; ?>><?php echo JText::_('WEEVERLOGIN_PROFILE_K2'); ?></option-->
 						
 					</select>
 				

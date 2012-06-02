@@ -35,6 +35,11 @@ jimport('joomla.html.pane');
 
 $pane 	= &JPane::getInstance('tabs');
 
+if ( WeeverLoginHelper::joomlaVersion() != "1.5" )
+	$joom_system = "joomla25";
+else  
+	$joom_system = "joomla";
+
 ?>
 
 <form action='index.php' enctype='multipart/form-data' method='post' name='adminForm' id='adminForm'>
@@ -114,7 +119,7 @@ $pane 	= &JPane::getInstance('tabs');
 				
 					<select name="UserSystem">
 					
-						<option value="joomla"><?php echo JText::_('WEEVERLOGIN_PROFILE_JOOMLA_NATIVE'); ?></option>
+						<option value="<?php echo $joom_system; ?>"><?php echo JText::_('WEEVERLOGIN_PROFILE_JOOMLA_NATIVE'); ?></option>
 						<!--option value="k2" <?php echo (@$this->login->system == "k2") ? "selected='selected'" : ''; ?>><?php echo JText::_('WEEVERLOGIN_PROFILE_K2'); ?></option-->
 						
 					</select>

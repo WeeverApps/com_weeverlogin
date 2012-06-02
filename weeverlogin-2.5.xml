@@ -59,8 +59,8 @@
 	
 	<plugins>
 	
-		<plugin folder="plugins/system" plugin="weevercors" group="system" name="System - Weever Apps Cross-Origin Resource Sharing (CORS) Connector" />
-		<plugin folder="plugins/user" plugin="weeverauthenticate" name="User - Weever Apps AJAX Authenticator" />
+		<plugin folder="plugins/system" plugin="weevercors" group="system" name="Weever Apps Cross-Origin Resource Sharing (CORS) Connector" />
+		<plugin folder="plugins/user" group="user" plugin="weeverauthenticate" name="Weever Apps AJAX Authenticator for Joomla" />
 		
 	</plugins>
 	

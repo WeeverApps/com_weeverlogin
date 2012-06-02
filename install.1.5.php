@@ -25,6 +25,8 @@ jimport('joomla.installer.installer');
 
 $lang 	= &JFactory::getLanguage();
 
+$release	= "0.2";
+
 $lang->load("com_weever");
 
 /* Detect plg_weever_cors */
@@ -49,6 +51,16 @@ else
 	$templateInstallText 	= JText::_("WEEVER_INSTALLING_TEMPLATE");
 
 }
+
+
+echo "
+		<div style='clear:both'>
+		
+				<img src='components/com_weeverlogin/assets/icons/icon-48-weever_toolbar_title.png' style='float:left;padding-right:2em' />
+				<h1 style='padding-top:0.625em;padding-bottom:1em;'>Weever Apps Login Component version ". $release ." (Beta)</h1>
+				
+		</div>
+		";
 
 /* Install plg_weever_cors plugin */
 
@@ -117,4 +129,6 @@ $db->setQuery($query);
 $db->query();
 
 echo "<p><i>".JText::_("WEEVER_ENABLED_PLUGIN")."Weever AJAX Authenticator for Joomla</i></p>";
+
+echo "<h2><a href='index.php?option=com_weeverlogin'>Go to Login Settings »»</a></h2>";
 

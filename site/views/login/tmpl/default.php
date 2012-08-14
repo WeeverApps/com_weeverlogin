@@ -24,8 +24,10 @@ $guest 		= WeeverLoginHelper::getLoginSetting();
 $appdress 	= "http://" . WeeverLoginHelper::getCustomAppDomain();
 $css_url	= WeeverLoginHelper::getLoginCssUrl();
 
-if( $appdress == "http://" )
+if( $appdress == "http://" && WeeverLoginHelper::getStageStatus() == false )
 	$appdress = 'http://weeverapp.com/app/'.WeeverLoginHelper::getPrimaryDomain();
+else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
+	$appdress = 'http://stage.weeverapp.com/app/'.WeeverLoginHelper::getPrimaryDomain();
 
 ?><!DOCTYPE html>
 <html>

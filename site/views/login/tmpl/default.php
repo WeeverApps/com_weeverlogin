@@ -140,20 +140,6 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					items: 			[
 						
 						{
-							
-							xtype: 		'hiddenfield',
-							name: 		'option',
-							value: 		'com_user<?php echo (WeeverLoginHelper::joomlaVersion() != "1.5") ? "s":""; ?>'
-						
-						},
-						{
-						
-							xtype: 		'hiddenfield',
-							name: 		'task',
-							value: 		'<?php echo (WeeverLoginHelper::joomlaVersion() != "1.5") ? "user.login":"login"; ?>'
-							
-						},
-						{
 						
 							xtype:		'hiddenfield',
 							name:		'wxCorsRequest',
@@ -173,7 +159,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						
 							xtype:		'hiddenfield',
 							name:		'return',
-							value:		'aW5kZXgucGhwP29wdGlvbj1jb21fdXNlcnMmd3hDb25maXJtTG9naW49MQ=='
+							value:		'aW5kZXgucGhwP29wdGlvbj1jb21fdXNlcnMmd3hDb25maXJtTG9naW49MQ==' // this is base64 of wxConfirmLogin=1 in URL
 						
 						},
 						
@@ -236,7 +222,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							
 								this.up('formpanel').submit({
 							
-									url:		'index.php',
+									url:		'index.php?option=com_user<?php echo (WeeverLoginHelper::joomlaVersion() != "1.5") ? "s":""; ?>&task=<?php echo (WeeverLoginHelper::joomlaVersion() != "1.5") ? "user.login":"login"; ?>',
 									method:		'POST',
 									success:	function(form, result) {
 									

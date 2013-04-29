@@ -3,7 +3,8 @@
 *	Weever Apps Login Component for Joomla
 *	(c) 2012 Weever Apps Inc. <http://www.weeverapps.com/>
 *
-*	Author: 	Robert Gerald Porter <rob@weeverapps.com>
+*	Author: 	Robert Gerald Porter 	<rob@weeverapps.com>
+*				Aaron Song 				<aaron@weeverapps.com>
 *	Version: 	0.2
 *   License: 	GPL v3.0
 *
@@ -63,6 +64,26 @@ class WeeverLoginController extends JController
 	
 	}
 	
+	public function checkUser()
+	{
+	
+		$username	= JRequest::getVar("username");
+		
+		$model 		= $this->getModel('user');
+		
+		$response	= $model->checkUser( $username );
+		
+		ob_end_clean();
+		
+		if ( false == $response ) {
+			echo 'The username you entered is not available. Please pick another username.';
+			die();
+		} else {
+			echo 'success';
+			die();
+		}	
+	
+	}
 
 }
 

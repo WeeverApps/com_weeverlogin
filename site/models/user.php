@@ -55,7 +55,25 @@ class WeeverLoginModelUser extends JModel
 			return true;
 	
 	}
-
-
+	
+	public function checkEmail($email)
+	{
+		
+		$db = JFactory::getDBO();
+		
+		$query = 	
+			"SELECT * FROM #__users ".
+			"WHERE `email` = '".$email."'";
+		
+		$db->setQuery($query);
+		
+		$result = $db->loadObject();
+		
+		if( $result )
+			return false;
+		else
+			return true;
+	
+	}
 
 }

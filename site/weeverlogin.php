@@ -71,16 +71,57 @@ class WeeverLoginController extends JController
 		
 		$model 		= $this->getModel('user');
 		
-		$response	= $model->checkUser( $username );
+		$response	= array();
+		
+		$response['success']	= $model->checkUser( $username );
 		
 		ob_end_clean();
 		
-		if ( false == $response ) {
-			echo 'The username you entered is not available. Please pick another username.';
-			die();
+		if ( !$response['success'] ) {
+		
+			$response['message'] = 'The username you entered is not available. Please pick another username.';
+			
+			print_r ( json_encode( $response ) );
+			jexit();
+			
 		} else {
-			echo 'success';
-			die();
+			
+			$response['message'] = 'The username you entered is valid.';
+			
+			echo ( json_encode( $response ) );
+			jexit();
+			
+		}	
+	
+	}
+	
+	public function checkEmail()
+	{
+	
+		$email	= JRequest::getVar("email");
+		
+		$model 		= $this->getModel('user');
+		
+		$response	= array();
+		
+		$response['success']	= $model->checkEmail( $email );
+		
+		ob_end_clean();
+		
+		if ( !$response['success'] ) {
+		
+			$response['message'] = 'The email address you entered is not available. Please pick another email address.';
+			
+			print_r ( json_encode( $response ) );
+			jexit();
+			
+		} else {
+			
+			$response['message'] = 'The email address you entered is valid.';
+			
+			echo ( json_encode( $response ) );
+			jexit();
+			
 		}	
 	
 	}

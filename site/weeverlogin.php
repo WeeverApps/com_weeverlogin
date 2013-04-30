@@ -81,14 +81,34 @@ class WeeverLoginController extends JController
 		
 			$response['message'] = 'The username you entered is not available. Please pick another username.';
 			
-			print_r ( json_encode( $response ) );
+			header('Content-type: application/json');				
+			header('Cache-Control: no-cache, must-revalidate');
+			
+			$callback = JRequest::getVar('callback');
+			
+			$json = json_encode($response);
+			
+			if($callback)
+				$json = $callback . "(". $json .")";
+			
+			print_r($json);
 			jexit();
 			
 		} else {
 			
 			$response['message'] = 'The username you entered is valid.';
 			
-			echo ( json_encode( $response ) );
+			header('Content-type: application/json');				
+			header('Cache-Control: no-cache, must-revalidate');
+			
+			$callback = JRequest::getVar('callback');
+			
+			$json = json_encode($response);
+			
+			if($callback)
+				$json = $callback . "(". $json .")";
+			
+			print_r($json);
 			jexit();
 			
 		}	
@@ -112,14 +132,34 @@ class WeeverLoginController extends JController
 		
 			$response['message'] = 'The email address you entered is not available. Please pick another email address.';
 			
-			print_r ( json_encode( $response ) );
+			header('Content-type: application/json');				
+			header('Cache-Control: no-cache, must-revalidate');
+			
+			$callback = JRequest::getVar('callback');
+			
+			$json = json_encode($response);
+			
+			if($callback)
+				$json = $callback . "(". $json .")";
+			
+			print_r($json);
 			jexit();
 			
 		} else {
 			
 			$response['message'] = 'The email address you entered is valid.';
 			
-			echo ( json_encode( $response ) );
+			header('Content-type: application/json');				
+			header('Cache-Control: no-cache, must-revalidate');
+			
+			$callback = JRequest::getVar('callback');
+			
+			$json = json_encode($response);
+			
+			if($callback)
+				$json = $callback . "(". $json .")";
+			
+			print_r($json);
 			jexit();
 			
 		}	

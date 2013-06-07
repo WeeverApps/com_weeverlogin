@@ -138,7 +138,11 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					
 					},
 					items: 			[
-						
+					/* {
+							xtype:      'panel',
+							html:       '<img class="wx-login-logo" src="http://yoursite/yourlogo.png" />'
+						},
+					*/							
 						{
 						
 							xtype:		'hiddenfield',

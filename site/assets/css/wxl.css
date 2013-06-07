@@ -727,8 +727,31 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
  min-width: 20em;
 }
 
+/* Optional Logo CSS - If you add a log in the tpml/default.php file */
+/*
 .wx-login-logo {
  max-width: 100%;
  margin: 0 auto;
  display: block;
 }
+
+*/
+
+/* Optionally remove border-radius kruft for square form inputs */
+/*
+
+.x-field,
+.x-form-label,
+.x-form-fieldset .x-form-fieldset-inner {
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
+.x-form-fieldset .x-form-fieldset-inner {
+	border: 0 !important;
+}
+
+#wxl-login-form-container {
+	border: 1px solid #a1a1a1;
+}
+*/

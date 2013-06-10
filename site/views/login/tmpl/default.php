@@ -132,7 +132,9 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 				
 					fullscreen:		true,
 					xtype:			'formpanel',
-					exception: function (panel, result, options) {
+        			styleHtmlContent:    true,
+        			styleHtmlCls:        'wxl-html',
+				    exception: function (panel, result, options) {
 					
 						alert("Failed");
 					

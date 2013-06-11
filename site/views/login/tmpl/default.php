@@ -131,6 +131,9 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 				config: 	{
 				
 					fullscreen:		true,
+					id:				'wxformpanel',
+        			styleHtmlContent:    true,
+        			styleHtmlCls:        'wxl-html',					
 					xtype:			'formpanel',
 					exception: function (panel, result, options) {
 					
@@ -138,7 +141,11 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					
 					},
 					items: 			[
-						
+					
+					    {
+							xtype:      'panel',
+							html:       '<img class="wx-login-logo" src="http://mvs013-011.directrouter.com/~sales/images/mobile_assets/lapbandconnect_landinglogo.png" />'
+						},
 						{
 						
 							xtype:		'hiddenfield',
@@ -220,7 +227,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							ui: 		'confirm',
 							handler: 	function() {
 							
-								this.up('formpanel').submit({
+								Ext.getCmp('wxformpanel').submit({
 							
 									url:		'index.php?option=com_user<?php echo (WeeverLoginHelper::joomlaVersion() != "1.5") ? "s":""; ?>&task=<?php echo (WeeverLoginHelper::joomlaVersion() != "1.5") ? "user.login":"login"; ?>',
 									method:		'POST',
@@ -259,6 +266,17 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							
 							}
 						
+						},
+						{
+						
+							xtype:		'button',
+							text:		'Create Acount',
+					     	cls:        'wxl-login-btn',
+							handler:	function() {
+							
+								window.location = '<?php echo JURI::root(); ?>' + 'index.php?option=com_weeverlogin&view=register&appUrl=' +  wxl.appdress;
+							
+							}
 						
 						}
 						

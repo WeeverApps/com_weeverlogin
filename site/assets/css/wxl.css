@@ -535,116 +535,228 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 .x-loading-spinner>span::before{-webkit-transform:rotate(30deg);-moz-transform:rotate(30deg)}
 .x-loading-spinner>span::after{-webkit-transform:rotate(-30deg);-moz-transform:rotate(-30deg)}
 .x-loading-spinner{-webkit-animation-name:x-loading-spinner-rotate;-webkit-animation-duration:.5s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear}
-@-webkit-keyframes x-loading-spinner-rotate{0%{-webkit-transform:rotate(0deg)}
-8.32%{-webkit-transform:rotate(0deg)}
-8.33%{-webkit-transform:rotate(30deg)}
-16.65%{-webkit-transform:rotate(30deg)}
-16.66%{-webkit-transform:rotate(60deg)}
-24.99%{-webkit-transform:rotate(60deg)}
-25%{-webkit-transform:rotate(90deg)}
-33.32%{-webkit-transform:rotate(90deg)}
-33.33%{-webkit-transform:rotate(120deg)}
-41.65%{-webkit-transform:rotate(120deg)}
-41.66%{-webkit-transform:rotate(150deg)}
-49.99%{-webkit-transform:rotate(150deg)}
-50%{-webkit-transform:rotate(180deg)}
-58.32%{-webkit-transform:rotate(180deg)}
-58.33%{-webkit-transform:rotate(210deg)}
-66.65%{-webkit-transform:rotate(210deg)}
-66.66%{-webkit-transform:rotate(240deg)}
-74.99%{-webkit-transform:rotate(240deg)}
-75%{-webkit-transform:rotate(270deg)}
-83.32%{-webkit-transform:rotate(270deg)}
-83.33%{-webkit-transform:rotate(300deg)}
-91.65%{-webkit-transform:rotate(300deg)}
-91.66%{-webkit-transform:rotate(330deg)}
-100%{-webkit-transform:rotate(330deg)}
+@-webkit-keyframes x-loading-spinner-rotate { 
+	0% {
+	 -webkit-transform: rotate(0deg)
+	}
+
+	8.32% {
+	 -webkit-transform: rotate(0deg)
+	}
+
+	8.33% {
+	 -webkit-transform: rotate(30deg)
+	}
+
+	16.65% {
+	 -webkit-transform: rotate(30deg)
+	}
+
+	16.66% {
+	 -webkit-transform: rotate(60deg)
+	}
+
+	24.99% {
+	 -webkit-transform: rotate(60deg)
+	}
+
+	25% {
+	 -webkit-transform: rotate(90deg)
+	}
+
+	33.32% {
+	 -webkit-transform: rotate(90deg)
+	}
+
+	33.33% {
+	 -webkit-transform: rotate(120deg)
+	}
+
+	41.65% {
+	 -webkit-transform: rotate(120deg)
+	}
+
+	41.66% {
+	 -webkit-transform: rotate(150deg)
+	}
+
+	49.99% {
+	 -webkit-transform: rotate(150deg)
+	}
+
+	50% {
+	 -webkit-transform: rotate(180deg)
+	}
+
+	58.32% {
+	 -webkit-transform: rotate(180deg)
+	}
+
+	58.33% {
+	 -webkit-transform: rotate(210deg)
+	}
+
+	66.65% {
+	 -webkit-transform: rotate(210deg)
+	}
+
+	66.66% {
+	 -webkit-transform: rotate(240deg)
+	}
+
+	74.99% {
+	 -webkit-transform: rotate(240deg)
+	}
+
+	75% {
+	 -webkit-transform: rotate(270deg)
+	}
+
+	83.32% {
+	 -webkit-transform: rotate(270deg)
+	}
+
+	83.33% {
+	 -webkit-transform: rotate(300deg)
+	}
+
+	91.65% {
+	 -webkit-transform: rotate(300deg)
+	}
+
+	91.66% {
+	 -webkit-transform: rotate(330deg)
+	}
+
+	100% {
+	 -webkit-transform: rotate(330deg)
+	}
 }
-
-/* Joomla! WXL Login, Specific Classes */
-
-.wxl-login-btn {
-  display: block;
-	border: 1px solid #3C8F3C;
-	color: white;
-	background-color: #5C5;
-	min-width: 10em;
-	text-align: center;
-	padding: .5em 1em;
-	margin: 1.5em auto;
-	max-width: 62%;
-	border-radius: .25em;
-	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 1em 0 rgba(255, 255, 255, 0.1) inset;
-	font-size: 1em;
-}
-
-#wxl-login-btn-primary { }
-
-
-#wxl-login-btn-guest {
-border: 1px solid #616161;
-background-color: #919191;
-background-image: -webkit-linear-gradient(white,#919191 2%,#7A7A7A);
-background-image: linear-gradient(white,#9E9E9E 2%,#7A7A7A);
-
-}
-
 
 .wxl-login-field {
-	border-bottom: 1px solid #DDD;
-
-
-	
+ border-bottom: 1px solid #ddd
 }
 
-.wxl-login-checkbox { }
+.wxl-login-checkbox {
 
-#wxl-login-field-password { }
-#wxl-login-field-username { }
-#wxl-login-checkbox-rememberme { }
+}
 
-#wxl-login-form-container { }
-.wxl-login-form { border: 1px solid #c1c1c1 }
+#wxl-login-field-password {
+
+}
+
+#wxl-login-field-username {
+
+}
+
+#wxl-login-checkbox-rememberme {
+
+}
+
+#wxl-login-form-container {
+ max-width: 100%;
+ width: 320px;
+ margin: 1em auto;
+}
+
+.wxl-login-form {
+ border: 1px solid #c1c1c1
+}
 
 /* Relocated JS Generated Classes for WXL Login */
 
 .x-form-label {
-	text-shadow:#fff 0 1px 1px;
-	text-shadow:rgba(255,255,255,0.25) 0 0.08em 0;
-	display:none !important;
-	white-space:nowrap;
-	overflow:hidden;
-	text-overflow:ellipsis;
-	background-color:#f7f7f7
-	color: #222;
-	background-color: #F7F7F7;
-	padding: 0.625em;
-	border-top: 1px solid white;
-	display: block;
-	min-width: 47%;
-	}
-	
+ text-shadow: #fff 0 1px 1px;
+ text-shadow: rgba(255,255,255,0.25) 0 0.08em 0;
+ display: none !important;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ background-color: #f7f7f7 color: #222;
+ background-color: #F7F7F7;
+ padding: 0.625em;
+ border-top: 1px solid white;
+ display: block;
+ min-width: 47%;
+}
+
 .x-form-label span {
-	font-size:1em;
-	font-weight:normal
-	}
-	
-	
+ font-size: 1em;
+ font-weight: normal;
+}
+
 .x-input-el {
-	padding-left:1em;
-	}
-	
-.x-field .x-input-radio:checked:after,.x-field .x-input-checkbox:checked:after{background-color:#222}
+ padding-left: 1em
+}
+
+.x-field .x-input-radio:checked:after,
+.x-field .x-input-checkbox:checked:after {
+ background-color: #222
+}
 
 
 /* Message Box Revisions */
 
-.x-msgbox { 
-    border: .125em solid #000;
-    min-width:20em;
+.x-msgbox {
+ border: .125em solid #000;
+ min-width: 20em;
+}
 
+.wx-login-logo {
+ max-width: 100%;
+ margin: 0 auto;
+ display: block;
+}
 
- }
+/* Joomla! WXL Login */
 
-.x-msgbox
+.wxl-login-btn {
+ display: block;
+ border: 1px solid #3C8F3C;
+ color: white;
+ background-color: #5C5;
+ min-width: 10em;
+ text-align: center;
+ padding: .5em 1em;
+ margin: 1em auto;
+ width: 320px;
+ max-width: 100%;
+ border-radius: .25em;
+ -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 1em 0 rgba(255, 255, 255, 0.1) inset;
+ box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 1em 0 rgba(255, 255, 255, 0.1) inset;
+ font-size: 1em;
+}
 
+.wxl-login-btn.white {
+ color: #666 !important;
+}
+
+#wxl-login-btn-guest {
+ border: 1px solid #616161;
+ background-color: #919191;
+ background-image: -webkit-linear-gradient(white,#919191 2%,#7A7A7A);
+ background-image: linear-gradient(white,#9E9E9E 2%,#7A7A7A);
+}
+
+/* removes rounded corners from forms, fixes responsive issues */
+
+.x-field,
+.x-form-label,
+.x-form-fieldset .x-form-fieldset-inner {
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
+.x-form-fieldset .x-form-fieldset-inner {
+	border: 0 !important;
+}
+
+#wxl-login-form-container {
+	border: 1px solid #a1a1a1;
+}
+
+.wxl-html,
+.x-form-inner.wxl-html,
+.x-form-inner {
+	max-width: 100%;
+}

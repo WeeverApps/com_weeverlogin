@@ -135,17 +135,19 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
         			styleHtmlContent:    true,
         			styleHtmlCls:        'wxl-html',					
 					xtype:			'formpanel',
-					exception: function (panel, result, options) {
+        			styleHtmlContent:    true,
+        			styleHtmlCls:        'wxl-html',
+				    exception: function (panel, result, options) {
 					
 						alert("Failed");
 					
 					},
 					items: 			[
-					
-					    {
+					/* {
 							xtype:      'panel',
-							html:       '<img class="wx-login-logo" src="http://mvs013-011.directrouter.com/~sales/images/mobile_assets/lapbandconnect_landinglogo.png" />'
+							html:       '<img class="wx-login-logo" src="http://yoursite/yourlogo.png" />'
 						},
+					*/
 						{
 						
 							xtype:		'hiddenfield',
@@ -253,7 +255,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						
 							xtype:		'button',
 							text:		'Proceed as Guest',
-                            cls:        'wxl-login-btn',
+                            cls:        'wxl-login-btn white',
                        <?php if( $guest != 1 ) : ?>
                        		
                        		 hidden:		true,

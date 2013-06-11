@@ -264,7 +264,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					
 					if (atpos < 1 || dotpos < atpos+2 || dotpos+2 >= email1.length) {
 						
-						Ext.getCmp('wxl-register-field-emailCheckNotice').setHtml('The email address format is not valid.\n');
+						Ext.getCmp('wxl-register-field-emailCheckNotice').setHtml('Email address appears to be invalid.\n');
 						me.config.emailAddressVerify = 'The email address format is not valid.\n';
 						
 						return false;
@@ -440,22 +440,22 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								errorMsg	= '';
 								
 							if ( '' == name )
-								errorMsg += 'name cannot be empty.' + "\n";
+								errorMsg += '<div class="wx-register-validiation-msg">Please enter your name.</div>' + "\n";
 							
 							if ( '' == username )
-								errorMsg += 'Username cannot be empty.' + "\n";
+								errorMsg += '<div class="wx-register-validiation-msg">Please enter a user name.</div>' + "\n";
 							
 							if ( '' == password1 )
-								errorMsg += 'Password cannot be empty.' + "\n";
+								errorMsg += '<div class="wx-register-validiation-msg">Please enter a password.</div>' + "\n";
 							
 							if ( '' == password2 )
-								errorMsg += 'Password confirmation cannot be empty.' + "\n";
+								errorMsg += '<div class="wx-register-validiation-msg">Please confirm your password.</div>' + "\n";
 								
 							if ( '' == email1 )
-								errorMsg += 'Email cannot be empty.' + "\n";
+								errorMsg += '<div class="wx-register-validiation-msg">Please enter an email address.</div>' + "\n";
 								
 							if ( '' == email2 )
-								errorMsg += 'Email confirmation cannot be empty.' + "\n";
+								errorMsg += '<div class="wx-register-validiation-msg">Please confirm your email address.</div>' + "\n";
 								
 							
 							if ( '' != name && '' != username ) {
@@ -492,7 +492,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 									
 									if ( email1 != email2 ) {
 										
-										errorMsg += "The email addresses you entered do not match. Please enter your email address in the email address field and confirm your entry by entering it in the confirm email field.\n";
+										errorMsg += "The email addresses you entered do not match.\n";
 										
 										Ext.getCmp('wxl-register-field-email1').reset();
 										Ext.getCmp('wxl-register-field-email2').reset();
@@ -507,7 +507,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								
 								if ( password1 != password2 ) {
 									
-									errorMsg += "The passwords you entered do not match. Please enter your desired password in the password field and confirm your entry by entering it in the confirm password field.\n";
+									errorMsg += "The passwords you entered do not match.\n";
 									
 									Ext.getCmp('wxl-register-field-password1').reset();
 									Ext.getCmp('wxl-register-field-password2').reset();
@@ -532,7 +532,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							    useDefaultXhrHeader: false,
 							    success: function(response){
 							        
-							        Ext.Msg.alert('Success!', 'Your account has been created and an activation link has been sent to the email address you entered. Note that you must activate the account by clicking on the activation link when you get the email before you can login.', Ext.emptyFn);
+							        Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account has been created and an activation link has been sent to the email address you entered. Note that you must activate the account by clicking on the activation link when you get the email before you can login.</div>', Ext.emptyFn);
 							        
 							    }
 							});

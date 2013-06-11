@@ -633,32 +633,6 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 	}
 }
 
-/* Joomla! WXL Login */
-
-.wxl-login-btn {
- display: block;
- border: 1px solid #3C8F3C;
- color: white;
- background-color: #5C5;
- min-width: 10em;
- text-align: center;
- padding: .5em 1em;
- margin: 1.5em auto;
- width: 320px;
- max-width: 100%;
- border-radius: .25em;
- -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 1em 0 rgba(255, 255, 255, 0.1) inset;
- box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 1em 0 rgba(255, 255, 255, 0.1) inset;
- font-size: 1em;
-}
-
-#wxl-login-btn-guest {
- border: 1px solid #616161;
- background-color: #919191;
- background-image: -webkit-linear-gradient(white,#919191 2%,#7A7A7A);
- background-image: linear-gradient(white,#9E9E9E 2%,#7A7A7A);
-}
-
 .wxl-login-field {
  border-bottom: 1px solid #ddd
 }
@@ -720,6 +694,7 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
  background-color: #222
 }
 
+
 /* Message Box Revisions */
 
 .x-msgbox {
@@ -727,18 +702,43 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
  min-width: 20em;
 }
 
-/* Optional Logo CSS - If you add a log in the tpml/default.php file */
-/*
 .wx-login-logo {
  max-width: 100%;
  margin: 0 auto;
  display: block;
 }
 
-*/
+/* Joomla! WXL Login */
 
-/* Optionally remove border-radius kruft for square form inputs */
-/*
+.wxl-login-btn {
+ display: block;
+ border: 1px solid #3C8F3C;
+ color: white;
+ background-color: #5C5;
+ min-width: 10em;
+ text-align: center;
+ padding: .5em 1em;
+ margin: 1em auto;
+ width: 320px;
+ max-width: 100%;
+ border-radius: .25em;
+ -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 1em 0 rgba(255, 255, 255, 0.1) inset;
+ box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 1em 0 rgba(255, 255, 255, 0.1) inset;
+ font-size: 1em;
+}
+
+.wxl-login-btn.white {
+ color: #666 !important;
+}
+
+#wxl-login-btn-guest {
+ border: 1px solid #616161;
+ background-color: #919191;
+ background-image: -webkit-linear-gradient(white,#919191 2%,#7A7A7A);
+ background-image: linear-gradient(white,#9E9E9E 2%,#7A7A7A);
+}
+
+/* removes rounded corners from forms, fixes responsive issues */
 
 .x-field,
 .x-form-label,
@@ -754,7 +754,6 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 #wxl-login-form-container {
 	border: 1px solid #a1a1a1;
 }
-*/
 
 .wxl-html,
 .x-form-inner.wxl-html,

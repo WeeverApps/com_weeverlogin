@@ -252,7 +252,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						
 							xtype:		'button',
 							text:		'Proceed as Guest',
-                            cls:        'wxl-login-btn',
+                            cls:        'wxl-login-btn white',
                        <?php if( $guest != 1 ) : ?>
                        		
                        		 hidden:		true,

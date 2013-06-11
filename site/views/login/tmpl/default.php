@@ -273,7 +273,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						
 							xtype:		'button',
 							text:		'Create Acount',
-					     	cls:        'wxl-login-btn',
+					     	cls:        'wxl-login-btn white',
 							handler:	function() {
 							
 								window.location = '<?php echo JURI::root(); ?>' + 'index.php?option=com_weeverlogin&view=register&appUrl=' +  wxl.appdress;

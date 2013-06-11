@@ -146,11 +146,11 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					
 					},
 					items: 			[
-					
-					    {
+					/* {
 							xtype:      'panel',
-							html:       '<img class="wx-login-logo" src="http://mvs013-011.directrouter.com/~sales/images/mobile_assets/lapbandconnect_landinglogo.png" />'
+							html:       '<img class="wx-login-logo" src="http://yoursite/yourlogo.png" />'
 						},
+					*/
 						{
 						
 							xtype:		'hiddenfield',
@@ -543,8 +543,8 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					{
 					
 						xtype: 		'button',
-						cls: 		'wxl-login-btn',
-						text: 		'Back',
+						cls: 		'wxl-login-btn white',
+						text: 		'&laquo; Back',
 						handler: 	function() {
 						
 							history.back();
@@ -555,7 +555,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					{
 					
 						xtype: 		'button',
-						cls: 		'wxl-login-btn',
+						cls: 		'wxl-login-btn white',
 						text: 		'Reset',
 						handler: 	function() {
 						

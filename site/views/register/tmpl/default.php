@@ -265,7 +265,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					if (atpos < 1 || dotpos < atpos+2 || dotpos+2 >= email1.length) {
 						
 						Ext.getCmp('wxl-register-field-emailCheckNotice').setHtml('Email address appears to be invalid.\n');
-						me.config.emailAddressVerify = 'The email address format is not valid.\n';
+						me.config.emailAddressVerify = 'Email address appears to be invalid.\n';
 						
 						return false;
 					

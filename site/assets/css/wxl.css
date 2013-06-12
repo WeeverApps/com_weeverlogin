@@ -765,9 +765,13 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 
 /* registration */
 
-#wxl-register-field-emailCheckNotice {
+/* registration */
+
+#wxl-register-field-emailCheckNotice,
+#wxl-register-field-usernameCheckNotice {
 	font-size: .75em;
 	padding:   .83125em;
+	background-color: #e5e5e5;
 }
 
 .x-form-fieldset {

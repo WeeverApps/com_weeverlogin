@@ -150,6 +150,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							xtype:      'panel',
 							html:       '<img class="wx-login-logo" src="http://mvs013-011.directrouter.com/~sales/images/mobile_assets/lapbandconnect_landinglogo.png" />'
 						},
+						/*
 						{
 						
 							xtype:		'hiddenfield',
@@ -157,6 +158,23 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							value:		1
 						
 						},
+						*/
+						/*
+						{
+						
+							xtype:		'hiddenfield',
+							name:		'recaptcha_challenge_field',
+							value:		'03AHJ_VuvedmeD8QuTA5fNzb6aOex6s34M1iH14e5hdXIUfmIjvIBbZOYl52QJXXIaMkiclSK6P2mKPtjdocN6OLDTZ5RAofmE1eWYP41bXSpUTf8Am3ux94665HWu1viB-3wCarR07x2FVXVSGldIKlysUZLNExM_UxliubazCV27FAxnbI6xOy8'
+						
+						},
+						{
+						
+							xtype:		'hiddenfield',
+							name:		'recaptcha_response_field',
+							value:		'misclo 214'
+						
+						},
+						*/
 						{
 						
 							xtype:		'hiddenfield',
@@ -164,6 +182,8 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							value:		1
 						
 						},
+						
+						/*
 						<?php if( WeeverLoginHelper::joomlaVersion() != "1.5" ) : ?>
 						
 						{
@@ -175,7 +195,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						},
 						
 						<?php endif; ?>
-						
+						*/
 						{
 						
 							xtype:		'hiddenfield',
@@ -190,6 +210,53 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						
 						}						
 					] 	
+					
+				},
+				sendClinicCode: function(username, clinicCode) {
+					
+					var me = this;
+					//console.log('sendClinic.......');
+					//console.log(username);
+					Ext.data.JsonP.request({
+							
+					    url: 			'<?php echo JURI::root(); ?>index.php?option=com_weeverlogin',
+					    callbackKey: 	'callback',
+					    params: 		{
+					    
+					        task: 		'getUserId',
+					        username:	username
+					        
+					    },
+					    success: function(result, request) {
+							
+							//console.log('123');
+							//console.log(request);
+							//console.log(result);
+					       
+					        //return result.userId;
+					        var postData = {};
+					        postData.securecode = clinicCode;
+					        postData.userId = result.userId;
+					        
+					        Ext.Ajax.request({
+					            method: 'POST',
+					            withCredentials: true,
+					            params: postData,
+					            url: '<?php echo JURI::root(); ?>index.php?option=com_lapbandcode&task=upgrade',
+					            useDefaultXhrHeader: false,
+					            success: function(response){
+					            
+					            	//console.log('***');
+					            	//console.log(response);
+					                
+					                Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account was created and your clinic code also has been sent and need to be approved by administrator!</div>', Ext.emptyFn);
+					            	   
+					            }
+					        });
+					        
+					    }
+					    
+					});
 					
 				},
 				checkUsername: function(username) {
@@ -296,9 +363,9 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								xtype:			'textfield',
 								cls:			'wx-input',
 								name:			'ClinicCode',
-								id:				'clinic-code',
+								id:				'wxl-register-field-clinic-code',
 								label:			'Clinic Code:',
-								required:		true,
+								//required:		true,
 								useClearIcon: 	true,
 							    labelAlign:     'top',
 							    labelWidth:     ''		
@@ -461,6 +528,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						handler:	function() {
 							
 							var //me			= Ext.getCmp('wxregisterformpanel'),
+								clinicCode	= Ext.getCmp('wxl-register-field-clinic-code').getValue(),
 								name		= Ext.getCmp('wxl-register-field-name').getValue(),
 								username	= Ext.getCmp('wxl-register-field-username').getValue(),
 								password1 	= Ext.getCmp('wxl-register-field-password1').getValue(),
@@ -553,6 +621,8 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								
 							}
 							
+							//console.log('testing');
+							//console.log(me.getValues());
 							
 							Ext.Ajax.request({
 							    method: 'POST',
@@ -561,8 +631,16 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							    url: '<?php echo JURI::root(); ?>index.php?option=com_users&task=registration.register',
 							    useDefaultXhrHeader: false,
 							    success: function(response){
+							    
+							    	//console.log('yiha123');
+							    	//console.log(response);
 							        
-							        Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account has been created and an activation link has been sent to the email address you entered. Note that you must activate the account by clicking on the activation link when you get the email before you can login.</div>', Ext.emptyFn);
+							        //Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account has been created.</div>', Ext.emptyFn);
+							        if ( '' != clinicCode ) {
+							        	me.sendClinicCode(username, clinicCode);
+							        } else {
+							        	Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account has been created.</div>', Ext.emptyFn);
+							        }
 							        
 							    }
 							});

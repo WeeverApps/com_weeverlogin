@@ -64,6 +64,59 @@ class WeeverLoginController extends JController
 	
 	}
 	
+	public function getUserId()
+	{
+	
+		$username	= JRequest::getVar("username");
+		
+		$model 		= $this->getModel('user');
+		
+		$response	= array();
+		
+		$response['userId']	= $model->getUserId( $username );
+		
+		ob_end_clean();
+		
+		if ( !$response['userId'] ) {
+		
+			$response['message'] = 'Cannot find the user which you just created.';
+			$response['success'] = false;
+			
+			header('Content-type: application/json');				
+			header('Cache-Control: no-cache, must-revalidate');
+			
+			$callback = JRequest::getVar('callback');
+			
+			$json = json_encode($response);
+			
+			if($callback)
+				$json = $callback . "(". $json .")";
+			
+			print_r($json);
+			jexit();
+			
+		} else {
+			
+			$response['message'] = 'Found the user you just created!';
+			$response['success'] = true;
+			
+			header('Content-type: application/json');				
+			header('Cache-Control: no-cache, must-revalidate');
+			
+			$callback = JRequest::getVar('callback');
+			
+			$json = json_encode($response);
+			
+			if($callback)
+				$json = $callback . "(". $json .")";
+			
+			print_r($json);
+			jexit();
+			
+		}	
+	
+	}
+	
 	public function checkUser()
 	{
 	

@@ -36,6 +36,26 @@ class WeeverLoginModelUser extends JModel
         
 	}
 	
+	public function getUserId($username)
+	{
+		
+		$db = JFactory::getDBO();
+		
+		$query = 	
+			"SELECT * FROM #__users ".
+			"WHERE `username` = '".$username."'";
+		
+		$db->setQuery($query);
+		
+		$result = $db->loadObject();
+		
+		if( $result->id )
+			return $result->id;
+		else
+			return true;
+	
+	}
+	
 	public function checkUser($username)
 	{
 		

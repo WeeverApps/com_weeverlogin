@@ -146,10 +146,19 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					
 					},
 					items: 			[
+					    /*
 					    {
 							xtype:      'panel',
 							html:       '<img class="wx-login-logo" src="http://mvs013-011.directrouter.com/~sales/images/mobile_assets/lapbandconnect_landinglogo.png" />'
 						},
+						*/
+						{
+	                        xtype : 'container',
+	                        styleHtmlContent: true,
+	                       	cls   : 'wx-form-infobox',
+	                        html  : '<img class="wx-login-logo" src="http://mvs013-011.directrouter.com/~sales/images/mobile_assets/lapbandconnect_landinglogo.png" /><h9>Congratulations on taking the next step to a healthier lifestyle. Please enter the information in the fields to create your LAP-BAND Connect account, including the registration code you were given from your clinic.</h9>'                
+	
+	                    },
 						/*
 						{
 						

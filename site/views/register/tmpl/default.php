@@ -221,7 +221,41 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					] 	
 					
 				},
-				sendClinicCode: function(username, clinicCode) {
+				loginApp: function(username, password) {
+				
+					var loginData = {},
+						loginToken = '<?php echo JUtility::getToken(); ?>';
+					
+					loginData.username 		= username;
+					loginData.password 		= password;
+					loginData[loginToken] 	= 1;
+					loginData.return		= 'aW5kZXgucGhwP29wdGlvbj1jb21fdXNlcnMmd3hDb25maXJtTG9naW49MQ=='; // this is base64 of wxConfirmLogin=1 in URL
+					loginData.Submit		= 'Log in';
+					loginData.remember		= 'yes';
+					loginData.option		= 'com_users';
+					loginData.task			= 'user.login';
+					
+					//console.log('999');
+					//console.log(loginData);
+					//console.log(wxl.appdress);
+					
+					Ext.Ajax.request({
+					    method: 'POST',
+					    withCredentials: true,
+					    params: loginData,
+					    url: '<?php echo JURI::root(); ?>index.php?option=com_users&task=registration.register',
+					    useDefaultXhrHeader: false,
+					    success: function(response){
+					    
+					    	//console.log('yiha123');
+					    	//console.log(response);
+					        window.location = wxl.appdress;
+					        
+					    }
+					});
+				
+				},
+				sendClinicCode: function(username, clinicCode, password) {
 					
 					var me = this;
 					//console.log('sendClinic.......');
@@ -258,7 +292,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					            	//console.log('***');
 					            	//console.log(response);
 					                
-					                Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account was created and your clinic code also has been sent and need to be approved by administrator!</div>', Ext.emptyFn);
+					                Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account was created and your clinic code also has been sent and need to be approved by administrator!</div>', function() {me.loginApp(username, password);});
 					            	   
 					            }
 					        });
@@ -646,9 +680,21 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							        
 							        //Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account has been created.</div>', Ext.emptyFn);
 							        if ( '' != clinicCode ) {
-							        	me.sendClinicCode(username, clinicCode);
+							        	
+							        	me.sendClinicCode(username, clinicCode, password1);
+							        	
 							        } else {
-							        	Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account has been created.</div>', Ext.emptyFn);
+							        	
+							        	Ext.Msg.alert(
+							        		
+							        		'Success!',
+							        		'<div class="wx-register-validiation-msg">Your account has been created.</div>',
+							        		function() {
+							        			me.loginApp(username, password1);	
+							        		}
+						        		
+						        		);
+							        	
 							        }
 							        
 							    }

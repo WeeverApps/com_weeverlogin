@@ -155,8 +155,8 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						{
 	                        xtype : 'container',
 	                        styleHtmlContent: true,
-	                       	cls   : 'wx-form-infobox',
-	                        html  : '<img class="wx-login-logo" src="http://mvs013-011.directrouter.com/~sales/images/mobile_assets/lapbandconnect_landinglogo.png" /><h9>Congratulations on taking the next step to a healthier lifestyle. Please enter the information in the fields to create your LAP-BAND Connect account, including the registration code you were given from your clinic.</h9>'                
+	                       	cls   : 'wx-form-infobox wx-lapband-infobox',
+	                        html  : '<img class="wx-login-logo" src="images/mobile_assets/lapbandconnect_landinglogo.png" /><p><b>Congratulations</b> on taking the next step to a healthier lifestyle!</p><p style="margin-bottom: 0;">Please create your LAP-BAND Connect account below using the registration code you were given by your clinic.</p>'                
 	
 	                    },
 						/*
@@ -399,6 +399,10 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						xtype:		'fieldset',
 						id:			'wxl-login-form-container',
 						cls:		'wxl-login-form',
+						defaults:   {
+                        			labelWidth: '',
+                       				labelAlign: 'left'
+                   				    },					
 						items:		[
 						
 							{
@@ -407,24 +411,21 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								cls:			'wx-input',
 								name:			'ClinicCode',
 								id:				'wxl-register-field-clinic-code',
-								label:			'Clinic Code:',
+								label:			'Clinic Code',
+								placeHolder:	'Enter Code',
 								//required:		true,
 								useClearIcon: 	true,
-							    labelAlign:     'top',
-							    labelWidth:     ''		
 							},
 							{
 							
 								xtype: 			'textfield', 
 								name: 			'jform[name]',
 								label: 			'Name',
-								placeHolder: 	'Name',
+								placeHolder: 	'Enter Name',
 								cls:            'wxl-login-field',
 								id:             'wxl-register-field-name',
 								required: 		true,
 								clearIcon: 		true,
-								labelAlign:     'top',
-								labelWidth:     ''
 							
 							},
 							{
@@ -432,7 +433,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								xtype:		'fieldset',
 								defaults: {
 										labelWidth: '',
-							 			labelAlign: 'top'
+							 			labelAlign: 'left'
 								},	            
 								items:		[
 									
@@ -461,13 +462,6 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 											
 										}
 									
-									},{
-										
-										xtype:		'container',
-										id:			'wxl-register-field-usernameCheckNotice',
-										cls: 		'wx-form-infobox',
-										html:		''
-									
 									}
 									
 								]
@@ -483,8 +477,6 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								label:			'Password',
 								required:		true,
 								clearIcon: 		true,
-								labelAlign:     'top',
-								labelWidth:     ''
 							
 							},{
 							
@@ -492,11 +484,10 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								cls:			'wxl-login-field',
 								name:			'jform[password2]',
 								id:				'wxl-register-field-password2',
-								label:			'Confirm Password',
+								label:			'Re-enter',
+								placeHolder:	'Password',
 								required:		true,
 								clearIcon: 		true,
-								labelAlign:     'top',
-								labelWidth:     ''
 							
 							},
 							
@@ -506,7 +497,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								xtype:		'fieldset',
 								defaults: {
 										labelWidth: '',
-											labelAlign: 'top'
+										labelAlign: 'left'
 								},          
 								items:		[
 									
@@ -535,13 +526,6 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 											
 										}
 									
-									},{
-										
-										xtype:		'container',
-										id:			'wxl-register-field-emailCheckNotice',
-										cls: 		'wx-form-infobox',
-										html:		''
-									
 									}
 								]
 							
@@ -551,11 +535,10 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								cls:			'wxl-login-field',
 								name:			'jform[email2]',
 								id:				'wxl-register-field-email2',
-								label:			'Confirm Email',
+								label:			'Re-enter',
+								placeHolder:	'Email Address',
 								required:		true,
-								clearIcon: 		true,
-								labelAlign:     'top',
-								labelWidth:     ''
+								clearIcon: 		true
 							}
 						
 						]

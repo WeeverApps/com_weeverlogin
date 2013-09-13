@@ -47,6 +47,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 		
 		<script type='text/javascript' src='<?php echo JURI::base(true)."/components/com_weeverlogin/assets/js/touch.js"; ?>'></script>
 		<script type='text/javascript' src='<?php echo JURI::base(true)."/components/com_weeverlogin/assets/js/app-all.js"; ?>'></script>
+		<script type='text/javascript' src='http://api.recaptcha.net/js/recaptcha_ajax.js'></script>
 		
 		<script type="text/javascript">
 		
@@ -139,7 +140,16 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					usernameCheck:		null,
 					emailCheck:			null,
 					mailAddressVerify:	'',
+					listeners:		{
 					
+						painted:		{
+						
+							fn:			'onPainted',
+							single:		true
+							
+						}
+					
+					},
 					exception: function (panel, result, options) {
 					
 						alert("Failed");
@@ -219,6 +229,22 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						
 						}						
 					] 	
+					
+				},
+				onPainted:		function(view) {
+					
+					var me	= this;
+					
+					Recaptcha.create("6LcVa-USAAAAAKq_1nGke_pfad5lzyLiG4zSZnJi", "dynamic_recaptcha_1", {theme: "blackglass",lang : 'en',tabindex: 0});
+					
+					/*
+					Recaptcha.create("your_public_key", element, {
+						theme: "red",
+						callback: Recaptcha.focus_response_field}
+					);
+					*/
+					
+					recaptcha	= Ext.getCmp('dynamic_recaptcha_1');
 					
 				},
 				loginApp: function(username, password) {
@@ -385,6 +411,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					}
 					
 				},
+				
 				initialize: function() {
 				
 					this.callParent(arguments);
@@ -539,6 +566,16 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								placeHolder:	'Email Address',
 								required:		true,
 								clearIcon: 		true
+							},
+							{
+							
+								xtype:			'container',
+								cls:			'wxl-captcha-field',
+								name:			'captcha',
+								id:				'dynamic_recaptcha_1'
+								//label:			'Captcha',
+								//required:		true,
+								//clearIcon: 		true
 							}
 						
 						]
@@ -553,8 +590,27 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						ui: 		'confirm',
 						handler:	function() {
 							
-							var //me			= Ext.getCmp('wxregisterformpanel'),
-								clinicCode	= Ext.getCmp('wxl-register-field-clinic-code').getValue(),
+							var me			= Ext.getCmp('wxregisterformpanel'),
+								challenge 	= Recaptcha.get_challenge(),
+								response 	= Recaptcha.get_response();
+							
+							//console.log(challenge);
+							//console.log(response);
+							
+							me.add([					
+								{
+									xtype:		'hiddenfield',
+									name:		'recaptcha_challenge_field',
+									value:		challenge
+								},
+								{
+									xtype:		'hiddenfield',
+									name:		'recaptcha_response_field',
+									value:		response
+								}
+							]);
+							
+							var clinicCode	= Ext.getCmp('wxl-register-field-clinic-code').getValue(),
 								name		= Ext.getCmp('wxl-register-field-name').getValue(),
 								username	= Ext.getCmp('wxl-register-field-username').getValue(),
 								password1 	= Ext.getCmp('wxl-register-field-password1').getValue(),
@@ -658,8 +714,8 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							    useDefaultXhrHeader: false,
 							    success: function(response){
 							    
-							    	//console.log('yiha123');
-							    	//console.log(response);
+							    	console.log('yiha123');
+							    	console.log(response);
 							        
 							        //Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account has been created.</div>', Ext.emptyFn);
 							        if ( '' != clinicCode ) {
@@ -668,21 +724,35 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							        	
 							        } else {
 							        	
-							        	Ext.Msg.alert(
+							        	
+							        	if ( response.responseText.search('The CAPTCHA solution was incorrect') ) {
+							        	
+							        		Ext.Msg.alert(
+							        			
+							        			'Failure!',
+							        			'<div class="wx-register-validiation-msg">The CAPTCHA solution was incorrect.</div>', Ext.emptyFn
 							        		
-							        		'Success!',
-							        		'<div class="wx-register-validiation-msg">Your account has been created.</div>',
-							        		function() {
-							        			me.loginApp(username, password1);	
-							        		}
-						        		
-						        		);
+							        		);
+							        		
+							        	} else {
+							        		
+							        		Ext.Msg.alert(
+							        			
+							        			'Success!',
+							        			'<div class="wx-register-validiation-msg">Your account has been created.</div>',
+							        			function() {
+							        				me.loginApp(username, password1);	
+							        			}
+							        		
+							        		);
+							        		
+							        	}
 							        	
 							        }
 							        
 							    }
 							});
-								
+							
 						}
 						
 					},

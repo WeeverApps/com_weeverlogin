@@ -235,7 +235,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					
 					var me	= this;
 					
-					Recaptcha.create("6LcVa-USAAAAAKq_1nGke_pfad5lzyLiG4zSZnJi", "dynamic_recaptcha_1", {theme: "blackglass",lang : 'en',tabindex: 0});
+					Recaptcha.create("6LcVa-USAAAAAKq_1nGke_pfad5lzyLiG4zSZnJi", "dynamic_recaptcha_1", {theme: "white",lang : 'en',tabindex: 0});
 					
 					/*
 					Recaptcha.create("your_public_key", element, {

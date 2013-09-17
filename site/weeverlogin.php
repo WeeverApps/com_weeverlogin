@@ -73,9 +73,29 @@ class WeeverLoginController extends JController
 		
 		$response	= array();
 		
-		$response['userId']	= $model->getUserId( $username );
-		
 		ob_end_clean();
+		
+		if ( !$username || $username == '' ) {
+		
+			$response['message'] = 'Username is missing.';
+			$response['success'] = false;
+			
+			header('Content-type: application/json');				
+			header('Cache-Control: no-cache, must-revalidate');
+			
+			$callback = JRequest::getVar('callback');
+			
+			$json = json_encode($response);
+			
+			if($callback)
+				$json = $callback . "(". $json .")";
+			
+			print_r($json);
+			jexit();
+		}
+		
+		
+		$response['userId']	= $model->getUserId( $username );
 		
 		if ( !$response['userId'] ) {
 		

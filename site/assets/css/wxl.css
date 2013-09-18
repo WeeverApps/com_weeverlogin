@@ -793,7 +793,44 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 	background-color: #54bdbe !important; /* CONNECT IS 54bdbe, PRO IS 2b6166 */ 
 }
 
-/* reCaptcha */
+/* reCaptcha Hack */
+
+.wxl-captcha-field {
+	max-width: 284px;
+}
+
+.wxl-captcha-field #recaptcha_area,
+.wxl-captcha-field #recaptcha_table {
+	max-width: 284px !important;
+	width: 100% !important;
+	padding-bottom: .5em;
+	background: #ddd;
+}
+
+td.recaptcha_image_cell {
+	text-align: center;
+}
+
+.recaptchatable .recaptcha_image_cell {
+	background: #ddd !important;
+}
+
+div#recaptcha_image {
+	width: 280px !important;
+	max-width: 95% !important;
+	box-sizing: border-box;
+}
+
+div#recaptcha_image img {
+	height: auto;
+	max-width: 100% !important;
+	border: 1px solid #c1c1c1 !important;
+}
+
+#recaptcha_area img,
+#recaptcha_table img {
+	max-width: 100%;
+}	
 
 .wxl-captcha-field {
 	max-width: 100% !important;
@@ -839,4 +876,54 @@ a#recaptcha_whatsthis_btn {
 a#recaptcha_switch_img_btn {
 		background-image: url('http://www.google.com/recaptcha/api/img/white/text.gif') !important;
 		height: 16px !important;
+}
+
+/* remove recaptcha image borders */
+
+.recaptchatable .recaptcha_r1_c1,
+.recaptchatable .recaptcha_r1_c2,
+.recaptchatable .recaptcha_r1_c3,
+.recaptchatable .recaptcha_r1_c4,
+
+.recaptchatable .recaptcha_r2_c1,
+.recaptchatable .recaptcha_r2_c2,
+.recaptchatable .recaptcha_r2_c3,
+.recaptchatable .recaptcha_r2_c4,
+
+.recaptchatable .recaptcha_r3_c1,
+.recaptchatable .recaptcha_r3_c2,
+.recaptchatable .recaptcha_r3_c3,
+.recaptchatable .recaptcha_r3_c4,
+
+.recaptchatable .recaptcha_r4_c1,
+.recaptchatable .recaptcha_r4_c2,
+.recaptchatable .recaptcha_r4_c3,
+.recaptchatable .recaptcha_r4_c4,
+
+.recaptchatable .recaptcha_r5_c1,
+.recaptchatable .recaptcha_r5_c2,
+.recaptchatable .recaptcha_r5_c3,
+.recaptchatable .recaptcha_r5_c4,
+
+.recaptchatable .recaptcha_r6_c1,
+.recaptchatable .recaptcha_r6_c2,
+.recaptchatable .recaptcha_r6_c3,
+.recaptchatable .recaptcha_r6_c4,
+
+.recaptchatable .recaptcha_r7_c1,
+.recaptchatable .recaptcha_r7_c2,
+.recaptchatable .recaptcha_r7_c3,
+.recaptchatable .recaptcha_r7_c4,
+
+.recaptchatable .recaptcha_r8_c1,
+.recaptchatable .recaptcha_r8_c2,
+.recaptchatable .recaptcha_r8_c3,
+.recaptchatable .recaptcha_r8_c4 {
+	background: #ddd !important;
+}
+
+/* fix for links */
+
+.recaptchatable a, .recaptchatable a:hover {
+	line-height: 1.5 !important;
 }

@@ -235,7 +235,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					
 					var me	= this;
 					
-					Recaptcha.create("6LcVa-USAAAAAKq_1nGke_pfad5lzyLiG4zSZnJi", "dynamic_recaptcha_1", {theme: "white",lang : 'en',tabindex: 0});
+					//Recaptcha.create("6LcVa-USAAAAAKq_1nGke_pfad5lzyLiG4zSZnJi", "dynamic_recaptcha_1", {theme: "white",lang : 'en',tabindex: 0});
 					
 					/*
 					Recaptcha.create("your_public_key", element, {
@@ -243,8 +243,6 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						callback: Recaptcha.focus_response_field}
 					);
 					*/
-					
-					recaptcha	= Ext.getCmp('dynamic_recaptcha_1');
 					
 				},
 				loginApp: function(username, password) {
@@ -489,6 +487,13 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 											
 										}
 									
+									},{
+																			
+										xtype:		'container',
+										id:			'wxl-register-field-usernameCheckNotice',
+										cls: 		'wx-form-infobox',
+										html:		''
+									
 									}
 									
 								]
@@ -553,6 +558,13 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 											
 										}
 									
+									},{
+																			
+										xtype:		'container',
+										id:			'wxl-register-field-emailCheckNotice',
+										cls: 		'wx-form-infobox',
+										html:		''
+									
 									}
 								]
 							
@@ -566,7 +578,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								placeHolder:	'Email Address',
 								required:		true,
 								clearIcon: 		true
-							},
+							}/*,
 							{
 							
 								xtype:			'container',
@@ -576,7 +588,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								//label:			'Captcha',
 								//required:		true,
 								//clearIcon: 		true
-							}
+							}*/
 						
 						]
 					
@@ -590,13 +602,13 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						ui: 		'confirm',
 						handler:	function() {
 							
-							var me			= Ext.getCmp('wxregisterformpanel'),
-								challenge 	= Recaptcha.get_challenge(),
-								response 	= Recaptcha.get_response();
+							var me			= Ext.getCmp('wxregisterformpanel');
+								//challenge 	= Recaptcha.get_challenge(),
+								//response 	= Recaptcha.get_response();
 							
 							//console.log(challenge);
 							//console.log(response);
-							
+							/*
 							me.add([					
 								{
 									xtype:		'hiddenfield',
@@ -609,7 +621,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 									value:		response
 								}
 							]);
-							
+							*/
 							var clinicCode	= Ext.getCmp('wxl-register-field-clinic-code').getValue(),
 								name		= Ext.getCmp('wxl-register-field-name').getValue(),
 								username	= Ext.getCmp('wxl-register-field-username').getValue(),
@@ -724,7 +736,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							        	
 							        } else {
 							        	
-							        	
+							        	/*
 							        	if ( response.responseText.search('The CAPTCHA solution was incorrect') ) {
 							        	
 							        		Ext.Msg.alert(
@@ -746,7 +758,16 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							        		
 							        		);
 							        		
-							        	}
+							        	}*/
+							        	Ext.Msg.alert(
+							        		
+							        		'Success!',
+							        		'<div class="wx-register-validiation-msg">Your account has been created.</div>',
+							        		function() {
+							        			me.loginApp(username, password1);	
+							        		}
+							        	
+							        	);
 							        	
 							        }
 							        

@@ -166,7 +166,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 	                        xtype : 'container',
 	                        styleHtmlContent: true,
 	                       	cls   : 'wx-form-infobox wx-lapband-infobox',
-	                        html  : '<img class="wx-login-logo" src="images/mobile_assets/lapbandconnect_landinglogo.png" /><p><b>Congratulations</b> on taking the next step to a healthier lifestyle!</p><p style="margin-bottom: 0;">Please create your LAP-BAND Connect account below using the registration code you were given by your clinic.</p>'                
+	                        html  : '<img class="wx-login-logo" src="images/mobile_assets/lapbandconnect_landinglogo.png" /><p>Fill in the fields below to create your account.</p><p style="margin-bottom: 0;">To access all of the features you will need to enter the code provided by your certified LAP-BAND&reg; clinic.</p>'                
 	
 	                    },
 						/*
@@ -570,7 +570,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							{
 							
 								xtype:			'container',
-								cls:			'wxl-captcha-field',
+								cls:			'wxl-captcha-field wx-non-responsive-table',
 								name:			'captcha',
 								id:				'dynamic_recaptcha_1'
 								//label:			'Captcha',

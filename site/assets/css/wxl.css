@@ -792,3 +792,51 @@ input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 .x-form .x-scroll-container {
 	background-color: #54bdbe !important; /* CONNECT IS 54bdbe, PRO IS 2b6166 */ 
 }
+
+/* reCaptcha */
+
+.wxl-captcha-field {
+	max-width: 100% !important;
+}
+
+.recaptchatable a, .recaptchatable a:hover {
+    display: inline-block;
+}
+
+a#recaptcha_reload_btn img#recaptcha_reload,
+a#recaptcha_switch_audio_btn img#recaptcha_switch_audio,
+a#recaptcha_whatsthis_btn img#recaptcha_whatsthis,
+a#recaptcha_switch_img_btn img#recaptcha_switch_img {
+	display: none;
+}
+
+a#recaptcha_reload_btn,
+a#recaptcha_switch_audio_btn,
+a#recaptcha_whatsthis_btn,
+a#recaptcha_switch_img_btn {
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	overflow: hidden;
+	width :  25px !important;
+}
+
+a#recaptcha_reload_btn {
+		background-image: url('http://www.google.com/recaptcha/api/img/white/refresh.gif') !important;
+		height: 17px !important;
+}
+
+a#recaptcha_switch_audio_btn {
+		background-image: url('http://www.google.com/recaptcha/api/img/white/audio.gif') !important;
+		height: 16px !important;
+}
+
+a#recaptcha_whatsthis_btn {
+		background-image: url('http://www.google.com/recaptcha/api/img/white/help.gif') !important;
+		height: 16px !important;
+}
+
+a#recaptcha_switch_img_btn {
+		background-image: url('http://www.google.com/recaptcha/api/img/white/text.gif') !important;
+		height: 16px !important;
+}

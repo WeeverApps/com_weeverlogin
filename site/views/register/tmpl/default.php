@@ -166,7 +166,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 	                        xtype : 'container',
 	                        styleHtmlContent: true,
 	                       	cls   : 'wx-form-infobox wx-lapband-infobox',
-	                        html  : '<img class="wx-login-logo" src="images/mobile_assets/lapbandconnect_landinglogo.png" /><p>Fill in the fields below to create your account.</p><p style="margin-bottom: 0;">To access all of the features you will need to enter the code provided by your certified LAP-BAND&reg; clinic.</p>'                
+	                        html  : '<img class="wx-login-logo" src="images/mobile_assets/lapbandconnect_landinglogo.png" /><p>Please include the registration code from your clinic to unlock all the features of this app.</p><p style="margin-bottom: 0;">You can still create a Preview account with limited features without a code.</p>'                
 	
 	                    },
 						/*
@@ -722,12 +722,12 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							    method: 'POST',
 							    withCredentials: true,
 							    params: me.getValues(),
-							    url: '<?php echo JURI::root(); ?>index.php?option=com_users&task=registration.register',
+							    url: '<?php echo JURI::root(); ?>index.php?option=com_users&task=registration.register&mobile=1',
 							    useDefaultXhrHeader: false,
 							    success: function(response){
 							    
-							    	console.log('yiha123');
-							    	console.log(response);
+							    	//console.log('yiha123');
+							    	//console.log(response);
 							        
 							        //Ext.Msg.alert('Success!', '<div class="wx-register-validiation-msg">Your account has been created.</div>', Ext.emptyFn);
 							        if ( '' != clinicCode ) {

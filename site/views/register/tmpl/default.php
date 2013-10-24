@@ -130,16 +130,17 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 			Ext.define('WxLogin.view.Login', {
 			
 				extend: 	'Ext.form.Panel',
+				xtype:		'wxCustomLapbandRegistrationForm',
 				config: 	{
 				
 					fullscreen:			true,
 					id:					'wxregisterformpanel',
+        			wxConfig:            {},
+        			layout:             'vbox',
+        			scrollable:         'vertical',
+        			cls:                'wx-scrollable-panel wx-form wx-custom-lapband-registration-form',
         			styleHtmlContent:   true,
-        			styleHtmlCls:       'wxl-html',					
-					xtype:				'formpanel',
-					usernameCheck:		null,
-					emailCheck:			null,
-					mailAddressVerify:	'',
+        			styleHtmlCls:       'wx-html',
 					listeners:		{
 					
 						painted:		{
@@ -425,9 +426,9 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						id:			'wxl-login-form-container',
 						cls:		'wxl-login-form',
 						defaults:   {
-                        			labelWidth: '',
-                       				labelAlign: 'left'
-                   				    },					
+	                        labelWidth: '',
+	                        labelAlign: 'top'
+	                    },					
 						items:		[
 						
 							{
@@ -456,9 +457,9 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							{
 							
 								xtype:		'fieldset',
-								defaults: {
-										labelWidth: '',
-							 			labelAlign: 'left'
+								defaults:   {
+								    labelWidth: '',
+								    labelAlign: 'top'
 								},	            
 								items:		[
 									
@@ -490,9 +491,10 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 									},{
 																			
 										xtype:		'container',
+										styleHtmlContent: true,
 										id:			'wxl-register-field-usernameCheckNotice',
 										cls: 		'wx-form-infobox',
-										html:		''
+										html:		'Checking Username:'
 									
 									}
 									
@@ -527,10 +529,10 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 							{
 							
 								xtype:		'fieldset',
-								defaults: {
-										labelWidth: '',
-										labelAlign: 'left'
-								},          
+								defaults:   {
+								    labelWidth: '',
+								    labelAlign: 'top'
+								},         
 								items:		[
 									
 									{
@@ -561,9 +563,10 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 									},{
 																			
 										xtype:		'container',
+										styleHtmlContent: true,
 										id:			'wxl-register-field-emailCheckNotice',
 										cls: 		'wx-form-infobox',
-										html:		''
+										html:		'Checking Email:'
 									
 									}
 								]
@@ -596,7 +599,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					{
 											
 						xtype:		'button',
-						cls:        'wxl-login-btn',
+						cls:        'wx-btn green radiuspoint25',
 						id:         'wxl-register-btn-register',
 						text: 		'Register',
 						ui: 		'confirm',
@@ -780,7 +783,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					{
 					
 						xtype: 		'button',
-						cls: 		'wxl-login-btn white',
+						cls: 		'wx-btn white radiuspoint25',
 						text: 		'&laquo; Back',
 						handler: 	function() {
 						
@@ -792,7 +795,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 					{
 					
 						xtype: 		'button',
-						cls: 		'wxl-login-btn white',
+						cls: 		'wx-btn white radiuspoint25',
 						text: 		'Reset',
 						handler: 	function() {
 						

@@ -128,26 +128,27 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 			Ext.define('WxLogin.view.Login', {
 			
 				extend: 	'Ext.form.Panel',
+				xtype:		'wxCustomLapbandLoginForm',
 				config: 	{
 				
-					fullscreen:		true,
-					id:				'wxformpanel',
+					fullscreen:			true,
+					id:					'wxformpanel',
+        			wxConfig:            {},
+        			layout:             'vbox',
+        			scrollable:         'vertical',
+        			cls:                'wx-scrollable-panel wx-form wx-custom-lapband-login-form',
         			styleHtmlContent:    true,
-        			styleHtmlCls:        'wxl-html',					
-					xtype:			'formpanel',
-        			styleHtmlContent:    true,
-        			styleHtmlCls:        'wxl-html',
+        			styleHtmlCls:        'wx-html',
 				    exception: function (panel, result, options) {
 					
 						alert("Failed");
 					
 					},
 					items: 			[
-					/* {
+					    {
 							xtype:      'panel',
-							html:       '<img class="wx-login-logo" src="http://yoursite/yourlogo.png" />'
+							html:       '<img class="wx-login-logo" src="images/mobile_assets/lapbandconnect_landinglogo.png" />'
 						},
-					*/
 						{
 						
 							xtype:		'hiddenfield',
@@ -176,6 +177,10 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						{
 						
 							xtype:		'fieldset',
+							defaults: {
+		                        labelWidth: '',
+		                        labelAlign: 'top'
+		                    },
 							id:			'wxl-login-form-container',
 							cls:		'wxl-login-form',
 							items:		[
@@ -207,10 +212,12 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 								{
 								
 									xtype:			'checkboxfield',
+									labelWidth: 	'',
+									labelAlign: 	'left',
 									name:			'remember',
 									value:			1,
 									label:			'Remember Me',
-									labelWidth:		'75%',
+									//labelWidth:		'75%',
 									cls:            'wxl-login-checkbox',
 									id:             'wxl-login-field-rememberme',
 									clearIcon:		true
@@ -223,7 +230,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						{
 												
 							xtype:		'button',
-							cls:        'wxl-login-btn',
+							cls:        'wx-btn green radiuspoint25',
 							id:         'wxl-login-btn-primary',
 							text: 		'Sign In',
 							ui: 		'confirm',
@@ -255,7 +262,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						
 							xtype:		'button',
 							text:		'Proceed as Guest',
-                            cls:        'wxl-login-btn white',
+                            cls:        'wx-btn white radiuspoint25',
                        <?php if( $guest != 1 ) : ?>
                        		
                        		 hidden:		true,
@@ -273,7 +280,7 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 						
 							xtype:		'button',
 							text:		'Create Acount',
-					     	cls:        'wxl-login-btn white',
+					     	cls:        'wx-btn white radiuspoint25',
 							handler:	function() {
 							
 								window.location = '<?php echo JURI::root(); ?>' + 'index.php?option=com_weeverlogin&view=register&appUrl=' +  wxl.appdress;
@@ -304,4 +311,3 @@ else if ($appdress == "http://" && WeeverLoginHelper::getStageStatus() == true )
 <?php 
 
 jexit();
-
